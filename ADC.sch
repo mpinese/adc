@@ -29,21 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:Gajda_cmosieee
-LIBS:Gajda_ttlieee
-LIBS:my-4000
-LIBS:my-adc-dac
-LIBS:my-diode
-LIBS:my-drivers
-LIBS:my-linear
-LIBS:my-mcu
-LIBS:my-opto
-LIBS:my-regul
-LIBS:my-transistors
-LIBS:my-transceivers
-LIBS:my-xtal
-LIBS:my-transformers
-LIBS:my-device
 LIBS:ADC-cache
 EELAYER 24 0
 EELAYER END
