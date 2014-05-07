@@ -1,4 +1,4 @@
-update=Sun 04 May 2014 10:57:59 EST
+update=7/05/2014 12:59:19 PM
 version=1
 last_client=eeschema
 [cvpcb]
@@ -47,10 +47,7 @@ LibName16=valves
 version=1
 [eeschema]
 version=1
-PageLayoutDescrFile=
-SubpartIdSeparator=0
-SubpartFirstId=65
-LibDir=../../../Kicad/libraries
+LibDir=../electronics-kicad-lib/libraries
 NetFmtName=
 RptD_X=0
 RptD_Y=100
@@ -102,3 +99,4 @@ LibName42=my-transceivers
 LibName43=my-xtal
 LibName44=my-transformers
 LibName45=my-device
+LibName46=my-conn
