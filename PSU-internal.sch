@@ -46,7 +46,7 @@ LIBS:my-transformers
 LIBS:my-device
 LIBS:my-conn
 LIBS:ADC-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -573,7 +573,7 @@ Wire Wire Line
 	3200 5250 3200 5750
 Connection ~ 3200 5750
 Wire Wire Line
-	4900 5050 4800 5050
+	4800 5050 5150 5050
 Wire Wire Line
 	4300 5050 3700 5050
 Wire Wire Line
@@ -584,9 +584,9 @@ Wire Wire Line
 	5600 6050 5600 5750
 Connection ~ 5600 5750
 Wire Wire Line
-	4400 6050 3700 6050
+	3700 6050 4400 6050
 Wire Wire Line
-	3700 6050 3700 5850
+	3700 5750 3700 6050
 Wire Wire Line
 	4450 6350 4300 6350
 Wire Wire Line
@@ -633,12 +633,41 @@ Wire Wire Line
 	2750 4500 8000 4500
 Wire Wire Line
 	2750 3250 5100 3250
-Wire Wire Line
-	2750 5750 7450 5750
 Text HLabel 2750 3250 0    60   Input ~ 0
 +18V_EXT
 Text HLabel 2750 4500 0    60   Input ~ 0
 AGND_EXT
 Text HLabel 2750 5750 0    60   Input ~ 0
 -18V_EXT
+$Comp
+L BD242 Q?
+U 1 1 536B497F
+P 5300 5650
+F 0 "Q?" H 5250 5500 40  0000 R CNN
+F 1 "BD242" H 5300 5800 40  0000 R CNN
+F 2 "TO220" H 5180 5755 29  0001 C CNN
+F 3 "" H 5300 5650 60  0000 C CNN
+	1    5300 5650
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5300 5350 5300 5450
+Wire Wire Line
+	2750 5750 5100 5750
+Connection ~ 3700 5750
+Connection ~ 4200 5750
+Wire Wire Line
+	7450 5750 5500 5750
+Connection ~ 3950 4500
+Wire Wire Line
+	3950 7500 4100 7500
+Connection ~ 4100 5750
+Wire Wire Line
+	5150 6600 5150 5050
+Connection ~ 4900 5050
+Wire Wire Line
+	4350 7200 5850 7200
+Wire Wire Line
+	5850 7200 5850 4500
+Connection ~ 5850 4500
 $EndSCHEMATC
