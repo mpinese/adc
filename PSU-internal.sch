@@ -46,13 +46,13 @@ LIBS:my-transformers
 LIBS:my-device
 LIBS:my-conn
 LIBS:ADC-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 2 6
 Title ""
-Date "7 may 2014"
+Date "10 may 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -670,4 +670,6 @@ Wire Wire Line
 Wire Wire Line
 	5850 7200 5850 4500
 Connection ~ 5850 4500
+Text HLabel 10400 2450 0    60   Output ~ 0
++4V
 $EndSCHEMATC
