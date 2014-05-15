@@ -46,7 +46,7 @@ LIBS:my-transformers
 LIBS:my-device
 LIBS:my-conn
 LIBS:ADC-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -309,6 +309,6 @@ Wire Wire Line
 	3600 4200 3350 4200
 Wire Wire Line
 	3300 4050 3600 4050
-Text Notes 950  1200 0    60   ~ 0
-TODO:\nInput stage:\n  * Roofing filter\n  * Generally all component values\nPSU:\n  * -15 V\n  * +4 V\n  * Investigate PSRR of PCM4222 to see if the Sulzers are even required.\n
+Text Notes 1000 2050 0    60   ~ 0
+TODO:\nInput stage:\n  * Roofing filter\n  * Generally all component values\nPSU Internal:\n  * Investigate PSRR of PCM4222 to see if the Sulzers are even required.\n  * Determine feedback cap value\n  * Confirm selection of pass transistors\n  * Heatsinking of regs and trans?\n
 $EndSCHEMATC
