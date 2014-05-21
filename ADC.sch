@@ -309,6 +309,4 @@ Wire Wire Line
 	3600 4200 3350 4200
 Wire Wire Line
 	3300 4050 3600 4050
-Text Notes 1000 2050 0    60   ~ 0
-TODO:\nPSU Internal:\n  * Determine feedback cap value\n  * Confirm selection of pass transistors\n  * Heatsinking of regs and trans?\n
 $EndSCHEMATC
