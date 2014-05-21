@@ -67,7 +67,7 @@ P 3400 2700
 AR Path="/536CB06D/536DFDE9/536E032D" Ref="R?"  Part="1" 
 AR Path="/536E28DC/536E032D" Ref="R?"  Part="1" 
 F 0 "R?" V 3480 2700 40  0000 C CNN
-F 1 "50" V 3407 2701 40  0000 C CNN
+F 1 "47" V 3407 2701 40  0000 C CNN
 F 2 "~" V 3330 2700 30  0000 C CNN
 F 3 "~" H 3400 2700 30  0000 C CNN
 	1    3400 2700
@@ -159,21 +159,6 @@ F 3 "~" H 6500 2600 60  0000 C CNN
 	1    6500 2600
 	0    1    1    0   
 $EndComp
-$Comp
-L R R?
-U 1 1 536E0334
-P 7000 3050
-AR Path="/536CB06D/536DFDE9/536E0334" Ref="R?"  Part="1" 
-AR Path="/536E28DC/536E0334" Ref="R?"  Part="1" 
-F 0 "R?" V 7080 3050 40  0000 C CNN
-F 1 "22k" V 7007 3051 40  0000 C CNN
-F 2 "~" V 6930 3050 30  0000 C CNN
-F 3 "~" H 7000 3050 30  0000 C CNN
-	1    7000 3050
-	1    0    0    -1  
-$EndComp
-Text HLabel 7000 3550 3    60   Input ~ 0
-AGND
 Text HLabel 3000 2700 0    60   Input ~ 0
 LIN
 Wire Wire Line
@@ -197,10 +182,6 @@ Wire Wire Line
 	4900 3300 4900 3550
 Connection ~ 4900 2700
 Wire Wire Line
-	7000 2800 7000 2600
-Wire Wire Line
-	7000 3300 7000 3550
-Wire Wire Line
 	3150 2700 3000 2700
 Wire Wire Line
 	6100 2600 6300 2600
@@ -217,7 +198,6 @@ Wire Wire Line
 	5100 2700 4700 2700
 Text HLabel 7300 2600 2    60   Output ~ 0
 LOUT
-Connection ~ 7000 2600
 Wire Wire Line
 	7300 2600 6700 2600
 $Comp
@@ -227,7 +207,7 @@ P 3400 4850
 AR Path="/536CB06D/536DFDE9/536E0AD4" Ref="R?"  Part="1" 
 AR Path="/536E28DC/536E0AD4" Ref="R?"  Part="1" 
 F 0 "R?" V 3480 4850 40  0000 C CNN
-F 1 "50" V 3407 4851 40  0000 C CNN
+F 1 "47" V 3407 4851 40  0000 C CNN
 F 2 "~" V 3330 4850 30  0000 C CNN
 F 3 "~" H 3400 4850 30  0000 C CNN
 	1    3400 4850
@@ -319,21 +299,6 @@ F 3 "~" H 6500 4750 60  0000 C CNN
 	1    6500 4750
 	0    1    1    0   
 $EndComp
-$Comp
-L R R?
-U 1 1 536E0B02
-P 7000 5200
-AR Path="/536CB06D/536DFDE9/536E0B02" Ref="R?"  Part="1" 
-AR Path="/536E28DC/536E0B02" Ref="R?"  Part="1" 
-F 0 "R?" V 7080 5200 40  0000 C CNN
-F 1 "22k" V 7007 5201 40  0000 C CNN
-F 2 "~" V 6930 5200 30  0000 C CNN
-F 3 "~" H 7000 5200 30  0000 C CNN
-	1    7000 5200
-	1    0    0    -1  
-$EndComp
-Text HLabel 7000 5700 3    60   Input ~ 0
-AGND
 Text HLabel 3000 4850 0    60   Input ~ 0
 RIN
 Wire Wire Line
@@ -357,10 +322,6 @@ Wire Wire Line
 	4900 5450 4900 5700
 Connection ~ 4900 4850
 Wire Wire Line
-	7000 4950 7000 4750
-Wire Wire Line
-	7000 5450 7000 5700
-Wire Wire Line
 	3150 4850 3000 4850
 Wire Wire Line
 	6100 4750 6300 4750
@@ -377,7 +338,46 @@ Wire Wire Line
 	5100 4850 4700 4850
 Text HLabel 7300 4750 2    60   Output ~ 0
 ROUT
-Connection ~ 7000 4750
 Wire Wire Line
 	7300 4750 6700 4750
+Text HLabel 7000 5700 3    60   Input ~ 0
+AGND
+Wire Wire Line
+	7000 5450 7000 5700
+Connection ~ 7000 4750
+Wire Wire Line
+	7000 4950 7000 4750
+$Comp
+L R R?
+U 1 1 536E0B02
+P 7000 5200
+AR Path="/536CB06D/536DFDE9/536E0B02" Ref="R?"  Part="1" 
+AR Path="/536E28DC/536E0B02" Ref="R?"  Part="1" 
+F 0 "R?" V 7080 5200 40  0000 C CNN
+F 1 "22k" V 7007 5201 40  0000 C CNN
+F 2 "~" V 6930 5200 30  0000 C CNN
+F 3 "~" H 7000 5200 30  0000 C CNN
+	1    7000 5200
+	1    0    0    -1  
+$EndComp
+Text HLabel 7000 3550 3    60   Input ~ 0
+AGND
+Wire Wire Line
+	7000 3300 7000 3550
+$Comp
+L R R?
+U 1 1 536E0334
+P 7000 3050
+AR Path="/536CB06D/536DFDE9/536E0334" Ref="R?"  Part="1" 
+AR Path="/536E28DC/536E0334" Ref="R?"  Part="1" 
+F 0 "R?" V 7080 3050 40  0000 C CNN
+F 1 "22k" V 7007 3051 40  0000 C CNN
+F 2 "~" V 6930 3050 30  0000 C CNN
+F 3 "~" H 7000 3050 30  0000 C CNN
+	1    7000 3050
+	1    0    0    -1  
+$EndComp
+Connection ~ 7000 2600
+Wire Wire Line
+	7000 2800 7000 2600
 $EndSCHEMATC

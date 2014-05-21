@@ -310,5 +310,5 @@ Wire Wire Line
 Wire Wire Line
 	3300 4050 3600 4050
 Text Notes 1000 2050 0    60   ~ 0
-TODO:\nPSU Internal:\n  * Determine feedback cap value\n  * Confirm selection of pass transistors\n  * Heatsinking of regs and trans?\nOverall:\n  * Signal path R and noise, loading on final stage by PCM4222EVM
+TODO:\nPSU Internal:\n  * Determine feedback cap value\n  * Confirm selection of pass transistors\n  * Heatsinking of regs and trans?\n
 $EndSCHEMATC
