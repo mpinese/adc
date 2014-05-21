@@ -1,0 +1,31 @@
+<Qucs Schematic 0.0.17>
+<Properties>
+  <View=-104,0,1320,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=Noise_analysis.dat>
+  <DataDisplay=Noise_analysis.sch>
+  <OpenDisplay=1>
+  <Script=Noise_analysis.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 10 535 590 485 3 #c0c0c0 1 11 1 1 1 100000 1 1e-09 1 1 1 -1 0.2 1 315 0 225 "" "" "">
+	<"Pr1.vn" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 700 535 590 485 3 #c0c0c0 1 11 1 1 1 1e+07 1 3e-08 1 1e-07 1 -1 0.2 1 315 0 225 "" "" "">
+	<"Pr1.v" #0000ff 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
