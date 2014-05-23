@@ -46,13 +46,13 @@ LIBS:my-transformers
 LIBS:my-device
 LIBS:my-conn
 LIBS:ADC-cache
-EELAYER 24 0
+EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title ""
-Date "21 may 2014"
+Date "23 may 2014"
 Rev ""
 Comp ""
 Comment1 ""
