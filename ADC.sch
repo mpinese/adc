@@ -52,7 +52,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title ""
-Date "23 may 2014"
+Date "25 may 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -309,4 +309,5 @@ Wire Wire Line
 	3600 4200 3350 4200
 Wire Wire Line
 	3300 4050 3600 4050
+NoConn ~ 3250 4300
 $EndSCHEMATC
