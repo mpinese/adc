@@ -1,45 +1,45 @@
-Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Fri 30 May 2014 00:13:47 EST
+Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Fri 30 May 2014 09:33:55 EST
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BC2;
 Reference = C1;
 ValeurCmp = 10u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /535F19C2/536ECFCB;
 Reference = C2;
 ValeurCmp = 47u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BB5;
 Reference = C3;
 ValeurCmp = 10u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /535F19C2/535FBC9E;
 Reference = C4;
 ValeurCmp = 10u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /535F19C2/537D7B8F;
 Reference = C5;
 ValeurCmp = 10u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BA8;
 Reference = C6;
 ValeurCmp = 10u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
@@ -263,14 +263,14 @@ BeginCmp
 TimeStamp = /536E28DC/536E0333;
 Reference = C38;
 ValeurCmp = 47u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /536E28DC/536E0AFC;
 Reference = C39;
 ValeurCmp = 47u;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2;
 EndCmp
 
 BeginCmp
