@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name my-trafos)(type KiCad)(uri /home/mark/repos/electronics-kicad-lib/footprints/my-transformers.pretty)(options "")(descr ""))
+)

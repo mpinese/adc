@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Fri 30 May 2014 15:14:59 EST
+Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Fri 30 May 2014 17:08:20 EST
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BC2;
@@ -610,6 +610,41 @@ IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight;
 EndCmp
 
 BeginCmp
+TimeStamp = /53688C29/53883653;
+Reference = P18;
+ValeurCmp = CONN_1;
+IdModule  = Connect:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53688C29/53883648;
+Reference = P19;
+ValeurCmp = CONN_1;
+IdModule  = Connect:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53688C29/5388363D;
+Reference = P20;
+ValeurCmp = CONN_1;
+IdModule  = Connect:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53688C29/53883632;
+Reference = P21;
+ValeurCmp = CONN_1;
+IdModule  = Connect:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /53688C29/53883620;
+Reference = P22;
+ValeurCmp = CONN_1;
+IdModule  = Connect:1pin;
+EndCmp
+
+BeginCmp
 TimeStamp = /535F19C2/535FB7FB;
 Reference = Q1;
 ValeurCmp = BD241A;
@@ -774,14 +809,14 @@ BeginCmp
 TimeStamp = /53688C29/53699514;
 Reference = R21;
 ValeurCmp = R;
-IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+IdModule  = ;
 EndCmp
 
 BeginCmp
 TimeStamp = /53688C29/536984E2;
 Reference = R22;
 ValeurCmp = R;
-IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+IdModule  = ;
 EndCmp
 
 BeginCmp
@@ -984,14 +1019,14 @@ BeginCmp
 TimeStamp = /53688C29/5369B6AF;
 Reference = T1;
 ValeurCmp = TRIAD-FS16-400-C2;
-IdModule  = ;
+IdModule  = my-trafos:TRIAD_FS16_400_C2;
 EndCmp
 
 BeginCmp
 TimeStamp = /53688C29/5369B344;
 Reference = T2;
 ValeurCmp = TRIAD-FS48-750-C2;
-IdModule  = ;
+IdModule  = my-trafos:TRIAD_FS48_750_C2;
 EndCmp
 
 BeginCmp
