@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Fri 30 May 2014 17:08:20 EST
+Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Sat 31 May 2014 15:56:42 EST
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BC2;
@@ -1093,17 +1093,17 @@ IdModule  = SMD_Packages:SOT23-5;
 EndCmp
 
 BeginCmp
-TimeStamp = /53688C29/537CB1E3;
+TimeStamp = /53688C29/5389743A;
 Reference = U10;
-ValeurCmp = P0720ECL;
-IdModule  = ;
+ValeurCmp = P0300ECL;
+IdModule  = Housings_TO-92:TO-92-Free-inline-wide;
 EndCmp
 
 BeginCmp
-TimeStamp = /53688C29/537DAB3C;
+TimeStamp = /53688C29/53897463;
 Reference = U11;
-ValeurCmp = P0720ECL;
-IdModule  = ;
+ValeurCmp = P0300ECL;
+IdModule  = Housings_TO-92:TO-92-Free-inline-wide;
 EndCmp
 
 BeginCmp
