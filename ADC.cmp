@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Sat 31 May 2014 15:56:42 EST
+Cmp-Mod V01 Created by CvPcb (2014-03-19 BZR 4756)-product date = Sat 31 May 2014 19:29:33 EST
 
 BeginCmp
 TimeStamp = /535F19C2/537D7BC2;
@@ -144,14 +144,14 @@ BeginCmp
 TimeStamp = /53688C29/5369950E;
 Reference = C21;
 ValeurCmp = C;
-IdModule  = ;
+IdModule  = Capacitors_ThroughHole:Capacitor12MMDiscRM7.75;
 EndCmp
 
 BeginCmp
 TimeStamp = /53688C29/536984D3;
 Reference = C22;
 ValeurCmp = C;
-IdModule  = ;
+IdModule  = Capacitors_ThroughHole:Capacitor12MMDiscRM7.75;
 EndCmp
 
 BeginCmp
@@ -466,28 +466,28 @@ BeginCmp
 TimeStamp = /53688C29/53819FC7;
 Reference = F1;
 ValeurCmp = FUSE;
-IdModule  = ;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /536ED27A;
 Reference = J1;
 ValeurCmp = RCA;
-IdModule  = ;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /536ED287;
 Reference = J2;
 ValeurCmp = RCA;
-IdModule  = ;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /53688C29/5369A60D;
 Reference = J3;
 ValeurCmp = IEC-C13-SOCKET;
-IdModule  = ;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
@@ -501,14 +501,14 @@ BeginCmp
 TimeStamp = /5368BCA4;
 Reference = P2;
 ValeurCmp = CONN_6;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_6pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /538851F7;
 Reference = P3;
 ValeurCmp = CONN_6;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_6pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
@@ -529,14 +529,14 @@ BeginCmp
 TimeStamp = /5387F111;
 Reference = P6;
 ValeurCmp = CONN_2;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /5387F219;
 Reference = P7;
 ValeurCmp = CONN_2;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
@@ -585,28 +585,28 @@ BeginCmp
 TimeStamp = /538832B0;
 Reference = P14;
 ValeurCmp = CONN_2;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /538836FD;
 Reference = P15;
 ValeurCmp = CONN_2;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /53883D80;
 Reference = P16;
 ValeurCmp = CONN_2;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
 TimeStamp = /5388418C;
 Reference = P17;
 ValeurCmp = CONN_4;
-IdModule  = Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight;
+IdModule  = Oddities:Dummy_Empty;
 EndCmp
 
 BeginCmp
@@ -809,14 +809,14 @@ BeginCmp
 TimeStamp = /53688C29/53699514;
 Reference = R21;
 ValeurCmp = R;
-IdModule  = ;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM15mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /53688C29/536984E2;
 Reference = R22;
 ValeurCmp = R;
-IdModule  = ;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM15mm;
 EndCmp
 
 BeginCmp

@@ -2,4 +2,4 @@ syntax: glob
 *.dat
 *.bak
 .*
-
+*.kicad_pcb-bak
