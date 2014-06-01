@@ -1,4 +1,4 @@
-update=Sat 31 May 2014 15:59:30 EST
+update=Sun 01 Jun 2014 09:19:48 EST
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -69,8 +69,8 @@ LibName46=my-conn
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=
-UseCmpFile=1
+LastNetListRead=ADC.net
+UseCmpFile=0
 PadDrill=0.6
 PadDrillOvalY=0.6
 PadSizeH=1.5

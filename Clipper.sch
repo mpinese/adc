@@ -140,7 +140,7 @@ F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 2600 4450 60  0001 
 F 3 "~" H 2600 4450 60  0000 C CNN
 F 4 "568-1360-1-ND" H 2600 4450 60  0001 C CNN "DigiKey"
 	1    2600 4450
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L DIODE D19
@@ -152,7 +152,7 @@ F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 2900 4150 60  0001 
 F 3 "~" H 2900 4150 60  0000 C CNN
 F 4 "568-1360-1-ND" H 2900 4150 60  0001 C CNN "DigiKey"
 	1    2900 4150
-	-1   0    0    -1  
+	1    0    0    1   
 $EndComp
 Text HLabel 1850 5650 0    60   Input ~ 0
 -15V
@@ -210,7 +210,7 @@ F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 8000 4450 60  0001 
 F 3 "~" H 8000 4450 60  0000 C CNN
 F 4 "568-1360-1-ND" H 8000 4450 60  0001 C CNN "DigiKey"
 	1    8000 4450
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L DIODE D23
@@ -222,7 +222,7 @@ F 2 "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10" H 8300 4150 60  0001 
 F 3 "~" H 8300 4150 60  0000 C CNN
 F 4 "568-1360-1-ND" H 8300 4150 60  0001 C CNN "DigiKey"
 	1    8300 4150
-	-1   0    0    -1  
+	1    0    0    1   
 $EndComp
 Text HLabel 7250 5650 0    60   Input ~ 0
 -15V
@@ -235,10 +235,10 @@ Text HLabel 10050 4200 0    60   Input ~ 0
 Text Notes 4950 1100 0    60   ~ 0
 Set to clip at +/- 6.25 V
 $Comp
-L C C40
+L C C42
 U 1 1 536EC1E0
 P 5450 1700
-F 0 "C40" H 5450 1800 40  0000 L CNN
+F 0 "C42" H 5450 1800 40  0000 L CNN
 F 1 "470n" H 5456 1615 40  0000 L CNN
 F 2 "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5" H 5488 1550 30  0001 C CNN
 F 3 "~" H 5450 1700 60  0000 C CNN
@@ -478,7 +478,7 @@ Wire Wire Line
 Connection ~ 9400 3700
 Wire Wire Line
 	9350 3700 9350 4000
-Text Notes 650  750  0    60   ~ 0
+Text Notes 750  950  0    60   ~ 0
 Noise calculation:\nFull scale approx. +/- 6V.\n24 bits, so LSB corresponds to approx. 12*2^(-24) = 0.72 uV.\nQucs analysis gives a pretty flat noise spectrum at around 0.4 uV, which passes.
 $Comp
 L R R47
@@ -493,10 +493,10 @@ F 4 "2.2KADCT-ND" V 9000 3400 60  0001 C CNN "DigiKey"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C C42
+L C C44
 U 1 1 537D7769
 P 5800 1700
-F 0 "C42" H 5800 1800 40  0000 L CNN
+F 0 "C44" H 5800 1800 40  0000 L CNN
 F 1 "470n" H 5806 1615 40  0000 L CNN
 F 2 "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5" H 5838 1550 30  0001 C CNN
 F 3 "~" H 5800 1700 60  0000 C CNN
@@ -505,10 +505,10 @@ F 4 "445-8425-ND" H 5800 1700 60  0001 C CNN "DigiKey"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C41
+L C C43
 U 1 1 537D7778
 P 5450 2100
-F 0 "C41" H 5450 2200 40  0000 L CNN
+F 0 "C43" H 5450 2200 40  0000 L CNN
 F 1 "470n" H 5456 2015 40  0000 L CNN
 F 2 "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5" H 5488 1950 30  0001 C CNN
 F 3 "~" H 5450 2100 60  0000 C CNN
@@ -517,10 +517,10 @@ F 4 "445-8425-ND" H 5450 2100 60  0001 C CNN "DigiKey"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C43
+L C C45
 U 1 1 537D7787
 P 5800 2100
-F 0 "C43" H 5800 2200 40  0000 L CNN
+F 0 "C45" H 5800 2200 40  0000 L CNN
 F 1 "470n" H 5806 2015 40  0000 L CNN
 F 2 "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5" H 5838 1950 30  0001 C CNN
 F 3 "~" H 5800 2100 60  0000 C CNN
@@ -745,24 +745,24 @@ F 3 "~" H 2600 3150 60  0000 C CNN
 $EndComp
 $Comp
 L LME49740 U15
-U 2 1 53803307
+U 4 1 53803307
 P 2500 5050
 F 0 "U15" H 2750 4900 60  0000 L CNN
 F 1 "LME49740" H 2750 4800 60  0000 L CNN
 F 2 "Sockets_DIP:DIP-14__300_ELL" H 2600 5050 60  0001 C CNN
 F 3 "~" H 2600 5050 60  0000 C CNN
-	2    2500 5050
+	4    2500 5050
 	1    0    0    -1  
 $EndComp
 $Comp
 L LME49740 U16
-U 2 1 53803335
+U 4 1 53803335
 P 7900 5050
 F 0 "U16" H 8150 4900 60  0000 L CNN
 F 1 "LME49740" H 8150 4800 60  0000 L CNN
 F 2 "Sockets_DIP:DIP-14__300_ELL" H 8000 5050 60  0001 C CNN
 F 3 "~" H 8000 5050 60  0000 C CNN
-	2    7900 5050
+	4    7900 5050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -778,24 +778,24 @@ F 3 "~" H 8000 3150 60  0000 C CNN
 $EndComp
 $Comp
 L LME49740 U15
-U 4 1 538036F5
+U 2 1 538036F5
 P 4650 3800
 F 0 "U15" H 4900 3650 60  0000 L CNN
 F 1 "LME49740" H 4900 3550 60  0000 L CNN
 F 2 "Sockets_DIP:DIP-14__300_ELL" H 4750 3800 60  0001 C CNN
 F 3 "~" H 4750 3800 60  0000 C CNN
-	4    4650 3800
+	2    4650 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L LME49740 U16
-U 4 1 5380372A
+U 2 1 5380372A
 P 10050 3800
 F 0 "U16" H 10300 3650 60  0000 L CNN
 F 1 "LME49740" H 10300 3550 60  0000 L CNN
 F 2 "Sockets_DIP:DIP-14__300_ELL" H 10150 3800 60  0001 C CNN
 F 3 "~" H 10150 3800 60  0000 C CNN
-	4    10050 3800
+	2    10050 3800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
