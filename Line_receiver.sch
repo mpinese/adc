@@ -364,4 +364,38 @@ F 4 "LME49740NA/NOPB-ND" H 5500 4750 60  0001 C CNN "DigiKey"
 	1    5500 4750
 	1    0    0    -1  
 $EndComp
+$Comp
+L CP1 C46
+U 1 1 538C7349
+P 8700 3900
+F 0 "C46" H 8750 4000 50  0000 L CNN
+F 1 "10u" H 8750 3800 50  0000 L CNN
+F 2 "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2-5" H 8700 3900 60  0001 C CNN
+F 3 "" H 8700 3900 60  0000 C CNN
+F 4 "478-6062-ND" H 8700 3900 60  0001 C CNN "DigiKey"
+	1    8700 3900
+	1    0    0    -1  
+$EndComp
+Text HLabel 8450 3700 0    60   Input ~ 0
++15V
+Text HLabel 8450 4100 0    60   Input ~ 0
+-15V
+Wire Wire Line
+	8450 3700 9200 3700
+Connection ~ 8700 3700
+Wire Wire Line
+	8450 4100 9200 4100
+Connection ~ 8700 4100
+$Comp
+L CP1 C47
+U 1 1 538C74B3
+P 9200 3900
+F 0 "C47" H 9250 4000 50  0000 L CNN
+F 1 "10u" H 9250 3800 50  0000 L CNN
+F 2 "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2-5" H 9200 3900 60  0001 C CNN
+F 3 "" H 9200 3900 60  0000 C CNN
+F 4 "478-6062-ND" H 9200 3900 60  0001 C CNN "DigiKey"
+	1    9200 3900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

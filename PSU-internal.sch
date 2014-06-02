@@ -342,10 +342,6 @@ Text Label 8000 3650 0    60   ~ 0
 VREF+
 Text Label 10550 4000 0    60   ~ 0
 VREF-
-Text Label 4100 1300 0    60   ~ 0
-+15V_INTERNAL
-Text Label 7450 3400 0    60   ~ 0
-+15V_INTERNAL
 Text Label 3350 4350 0    60   ~ 0
 VREF+
 Text Label 3350 6250 0    60   ~ 0
@@ -676,7 +672,7 @@ F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1730 6250 30  0001 C CN
 F 3 "~" H 1800 6250 30  0000 C CNN
 F 4 "4.99KXBK-ND" V 1800 6250 60  0001 C CNN "DigiKey"
 	1    1800 6250
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R15
@@ -1165,4 +1161,6 @@ F 4 "OPA27GP-ND" H 9650 4000 60  0001 C CNN "DigiKey"
 $EndComp
 NoConn ~ 9750 3650
 NoConn ~ 9750 4350
+Text HLabel 7450 3400 0    60   Input ~ 0
++18V_EXT
 $EndSCHEMATC
