@@ -648,7 +648,7 @@ F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1730 4350 30  0001 C CN
 F 3 "~" H 1800 4350 30  0000 C CNN
 F 4 "4.99KXBK-ND" V 1800 4350 60  0001 C CNN "DigiKey"
 	1    1800 4350
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R1
@@ -660,7 +660,7 @@ F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1730 2000 30  0001 C CN
 F 3 "~" H 1800 2000 30  0000 C CNN
 F 4 "4.99KXBK-ND" V 1800 2000 60  0001 C CNN "DigiKey"
 	1    1800 2000
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R3
@@ -672,7 +672,7 @@ F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 1730 6250 30  0001 C CN
 F 3 "~" H 1800 6250 30  0000 C CNN
 F 4 "4.99KXBK-ND" V 1800 6250 60  0001 C CNN "DigiKey"
 	1    1800 6250
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R15
