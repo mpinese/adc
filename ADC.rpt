@@ -1,0 +1,6038 @@
+## Module report - date Thu 05 Jun 2014 12:32:44 EST
+## Created by Pcbnew version pcbnew (2014-03-19 BZR 4756)-product
+## Unit = inches, Angle = deg.
+##
+
+$BeginDESCRIPTION
+
+$BOARD
+unit INCH
+upper_left_corner  0.417172  0.519931
+lower_right_corner 11.441489  7.645669
+$EndBOARD
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_5mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_5mm"
+attribut none
+position  1.476378  0.984252
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.196900  0.196900
+drill  0.196900
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_5mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_5mm"
+attribut none
+position  5.216535  0.984252
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.196900  0.196900
+drill  0.196900
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_5mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_5mm"
+attribut none
+position  1.476378  6.692913
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.196900  0.196900
+drill  0.196900
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_5mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_5mm"
+attribut none
+position  5.216535  6.692913
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.196900  0.196900
+drill  0.196900
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "C1"
+reference "C1"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.221260  1.521260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C1
+
+$MODULE "C2"
+reference "C2"
+value "47u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.271260  2.946260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C2
+
+$MODULE "C3"
+reference "C3"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.646260  4.396260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C3
+
+$MODULE "C4"
+reference "C4"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.771260  1.721260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C4
+
+$MODULE "C5"
+reference "C5"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.771260  3.146260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C5
+
+$MODULE "C6"
+reference "C6"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  9.446260  4.796260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C6
+
+$MODULE "C7"
+reference "C7"
+value "470u"
+footprint "Capacitors_ThroughHole:Capacitor10x16RM5"
+attribut none
+position  9.221260  1.846260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_10x16mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C7
+
+$MODULE "C8"
+reference "C8"
+value "470u"
+footprint "Capacitors_ThroughHole:Capacitor10x16RM5"
+attribut none
+position  9.221260  3.271260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_10x16mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C8
+
+$MODULE "C9"
+reference "C9"
+value "470u"
+footprint "Capacitors_ThroughHole:Capacitor10x16RM5"
+attribut none
+position  9.321260  4.471260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_10x16mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C9
+
+$MODULE "C10"
+reference "C10"
+value "47n"
+footprint "Capacitors_ThroughHole:Capacitor7.5MMDiscRM5"
+attribut none
+position  9.771260  0.821260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_7.5mm_disc.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C10
+
+$MODULE "C11"
+reference "C11"
+value "47n"
+footprint "Capacitors_ThroughHole:Capacitor7.5MMDiscRM5"
+attribut none
+position  9.746260  2.246260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_7.5mm_disc.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C11
+
+$MODULE "C12"
+reference "C12"
+value "47n"
+footprint "Capacitors_ThroughHole:Capacitor7.5MMDiscRM5"
+attribut none
+position 10.371260  4.946260
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_7.5mm_disc.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C12
+
+$MODULE "C13"
+reference "C13"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  9.383760  3.883760
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C13
+
+$MODULE "C14"
+reference "C14"
+value "470u"
+footprint "Capacitors_ThroughHole:Capacitor10x16RM5"
+attribut none
+position  8.475000  5.850000
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_10x16mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.100000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C14
+
+$MODULE "C15"
+reference "C15"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  9.083760  3.608760
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C15
+
+$MODULE "C16"
+reference "C16"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  9.658760  1.058760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C16
+
+$MODULE "C17"
+reference "C17"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  9.646260  2.496260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C17
+
+$MODULE "C18"
+reference "C18"
+value "47n"
+footprint "Capacitors_ThroughHole:Capacitor7.5MMDiscRM5"
+attribut none
+position  9.446260  6.096260
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_7.5mm_disc.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.100000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C18
+
+$MODULE "C19"
+reference "C19"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position 10.096260  4.821260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C19
+
+$MODULE "C20"
+reference "C20"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  9.846260  3.596260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C20
+
+$MODULE "C21"
+reference "C21"
+value "150n"
+footprint "Capacitors_ThroughHole:Capacitor18x6RM15"
+attribut none
+position  5.145276  3.762598
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_18x6mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.300000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C21
+
+$MODULE "C22"
+reference "C22"
+value "10n"
+footprint "Capacitors_ThroughHole:Capacitor13x4RM10"
+attribut none
+position  4.595276  3.612598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_13x4mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C22
+
+$MODULE "C23"
+reference "C23"
+value "150n"
+footprint "Capacitors_ThroughHole:Capacitor18x6RM15"
+attribut none
+position  2.745276  3.762598
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_18x6mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.300000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C23
+
+$MODULE "C24"
+reference "C24"
+value "10n"
+footprint "Capacitors_ThroughHole:Capacitor13x4RM10"
+attribut none
+position  2.195276  3.612598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cnp_13x4mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C24
+
+$MODULE "C25"
+reference "C25"
+value "2700u"
+footprint "Capacitors_ThroughHole:Capacitor16x25RM7.5"
+attribut none
+position  3.595276  2.612598
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_16x25mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C25
+
+$MODULE "C26"
+reference "C26"
+value "2700u"
+footprint "Capacitors_ThroughHole:Capacitor16x25RM7.5"
+attribut none
+position  2.295276  2.612598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_16x25mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C26
+
+$MODULE "C27"
+reference "C27"
+value "2700u"
+footprint "Capacitors_ThroughHole:Capacitor16x25RM7.5"
+attribut none
+position  4.495276  2.412598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_16x25mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C27
+
+$MODULE "C28"
+reference "C28"
+value "2700u"
+footprint "Capacitors_ThroughHole:Capacitor16x25RM7.5"
+attribut none
+position  2.945276  2.612598
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_16x25mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C28
+
+$MODULE "C29"
+reference "C29"
+value "2700u"
+footprint "Capacitors_ThroughHole:Capacitor16x25RM7.5"
+attribut none
+position  1.645276  2.612598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_16x25mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.150000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C29
+
+$MODULE "C30"
+reference "C30"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  4.545276  1.562598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C30
+
+$MODULE "C31"
+reference "C31"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  3.145276  2.112598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C31
+
+$MODULE "C32"
+reference "C32"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  1.695276  2.112598
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C32
+
+$MODULE "C33"
+reference "C33"
+value "1u"
+footprint "Capacitors_ThroughHole:Capacitor5x6RM2.5"
+attribut none
+position  4.545276  1.862598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_5x6mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C33
+
+$MODULE "C34"
+reference "C34"
+value "1u"
+footprint "Capacitors_ThroughHole:Capacitor5x6RM2.5"
+attribut none
+position  3.445276  2.112598
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_5x6mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C34
+
+$MODULE "C35"
+reference "C35"
+value "1u"
+footprint "Capacitors_ThroughHole:Capacitor5x6RM2.5"
+attribut none
+position  1.995276  2.112598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_5x6mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C35
+
+$MODULE "C36"
+reference "C36"
+value "6.2n"
+footprint "Capacitors_ThroughHole:Capacitor18x7RM15"
+attribut none
+position  7.396260  3.596260
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.005000
+size  0.098400  0.098400
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.600000  0.005000
+size  0.098400  0.098400
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C36
+
+$MODULE "C37"
+reference "C37"
+value "6.2n"
+footprint "Capacitors_ThroughHole:Capacitor18x7RM15"
+attribut none
+position  7.393760  1.293760
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.005000
+size  0.098400  0.098400
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.600000  0.005000
+size  0.098400  0.098400
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C37
+
+$MODULE "C38"
+reference "C38"
+value "22u"
+footprint "Capacitors_ThroughHole:Capacitor5x11RM2.5"
+attribut none
+position  7.396260  3.946260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_5x11mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C38
+
+$MODULE "C39"
+reference "C39"
+value "22u"
+footprint "Capacitors_ThroughHole:Capacitor5x11RM2.5"
+attribut none
+position  7.393760  1.643760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/cp_5x11mm.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position  0.000000  0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.000000 -0.050000
+size  0.078700  0.078700
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C39
+
+$MODULE "C40"
+reference "C40"
+value "47u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  7.796260  4.246260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C40
+
+$MODULE "C41"
+reference "C41"
+value "47u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2"
+attribut none
+position  7.793760  1.943760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.039400  0.000000
+size  0.058300  0.058300
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C41
+
+$MODULE "C42"
+reference "C42"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  7.446260  4.296260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C42
+
+$MODULE "C43"
+reference "C43"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  7.546260  4.896260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C43
+
+$MODULE "C44"
+reference "C44"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  7.443760  1.993760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C44
+
+$MODULE "C45"
+reference "C45"
+value "470n"
+footprint "Capacitors_ThroughHole:Capacitor3MMDiscRM2.5"
+attribut none
+position  7.543760  2.593760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/Capacitor/Capacitor3MMDiscRM2.5.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C45
+
+$MODULE "D1"
+reference "D1"
+value "1N4745"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  9.421260  0.921260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D1
+
+$MODULE "D2"
+reference "D2"
+value "1N4731"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  9.396260  2.346260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D2
+
+$MODULE "D3"
+reference "D3"
+value "1N4745"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position 10.271260  4.596260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D3
+
+$MODULE "D4"
+reference "D4"
+value "1N4734"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  9.371260  6.296260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D4
+
+$MODULE "D5"
+reference "D5"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  4.695276  3.112598
+orientation  0.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D5
+
+$MODULE "D6"
+reference "D6"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  4.695276  2.862598
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D6
+
+$MODULE "D7"
+reference "D7"
+value "RL205"
+footprint "Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15"
+attribut none
+position  3.595276  3.512598
+orientation  90.00
+layer component
+$PAD "1"
+position -0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D7
+
+$MODULE "D8"
+reference "D8"
+value "RL205"
+footprint "Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15"
+attribut none
+position  3.345276  3.512598
+orientation  270.00
+layer component
+$PAD "1"
+position -0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D8
+
+$MODULE "D9"
+reference "D9"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  5.245276  3.112598
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D9
+
+$MODULE "D10"
+reference "D10"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  5.245276  2.862598
+orientation  0.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D10
+
+$MODULE "D11"
+reference "D11"
+value "RL205"
+footprint "Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15"
+attribut none
+position  1.895276  3.512598
+orientation  90.00
+layer component
+$PAD "1"
+position -0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D11
+
+$MODULE "D12"
+reference "D12"
+value "RL205"
+footprint "Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15"
+attribut none
+position  1.645276  3.512598
+orientation  270.00
+layer component
+$PAD "1"
+position -0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.300000  0.000000
+size  0.100000  0.100000
+drill  0.059100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D12
+
+$MODULE "D13"
+reference "D13"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  4.795276  1.712598
+orientation  90.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D13
+
+$MODULE "D14"
+reference "D14"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  3.295276  1.912598
+orientation  180.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D14
+
+$MODULE "D15"
+reference "D15"
+value "1N4001"
+footprint "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10"
+attribut none
+position  1.845276  1.912598
+orientation  0.00
+layer component
+$PAD "1"
+position -0.200000  0.000000
+size  0.078700  0.078700
+drill  0.050000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D15
+
+$MODULE "D16"
+reference "D16"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.196260  5.296260
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D16
+
+$MODULE "D17"
+reference "D17"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.796260  5.496260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D17
+
+$MODULE "D18"
+reference "D18"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.096260  5.296260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D18
+
+$MODULE "D19"
+reference "D19"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.796260  5.646260
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D19
+
+$MODULE "D20"
+reference "D20"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.193760  2.993760
+orientation  90.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D20
+
+$MODULE "D21"
+reference "D21"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.793760  3.193760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D21
+
+$MODULE "D22"
+reference "D22"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.093760  2.993760
+orientation  270.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D22
+
+$MODULE "D23"
+reference "D23"
+value "1N4148"
+footprint "Diodes_ThroughHole:Diode_DO-35_SOD27_Horizontal_RM10"
+attribut none
+position  7.793760  3.343760
+orientation  0.00
+layer component
+$SHAPE3D
+Na "discret/diode.wrl"
+Sc 0.4 0.4 0.4
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.200000  0.000000
+size  0.066900  0.066900
+drill  0.027600
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$EndMODULE  D23
+
+$MODULE "P1"
+reference "P1"
+value "CONN_6"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_6pin_straight"
+attribut none
+position  3.445276  0.862598
+orientation  180.00
+layer component
+$PAD "1"
+position -0.250000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P1
+
+$MODULE "P4"
+reference "P4"
+value "CONN_6"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_6pin_straight"
+attribut none
+position  8.625000  5.200000
+orientation  0.00
+layer component
+$PAD "1"
+position -0.250000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.250000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P4
+
+$MODULE "P5"
+reference "P5"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  7.800000  6.150000
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P5
+
+$MODULE "P8"
+reference "P8"
+value "CONN_2"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight"
+attribut none
+position  6.921260  3.796260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P8
+
+$MODULE "P9"
+reference "P9"
+value "CONN_2"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight"
+attribut none
+position  6.921260  1.496260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P9
+
+$MODULE "P10"
+reference "P10"
+value "CONN_2"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight"
+attribut none
+position  6.921260  4.096260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P10
+
+$MODULE "P11"
+reference "P11"
+value "CONN_2"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight"
+attribut none
+position  6.918760  1.793760
+orientation  270.00
+layer component
+$PAD "1"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P11
+
+$MODULE "P12"
+reference "P12"
+value "CONN_2"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_2pin_straight"
+attribut none
+position  8.871260  6.096260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P12
+
+$MODULE "P13"
+reference "P13"
+value "CONN_4"
+footprint "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight"
+attribut none
+position  8.475000  1.550000
+orientation  180.00
+layer component
+$PAD "1"
+position -0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.000000
+size  0.070900  0.137800
+drill  0.047200
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  P13
+
+$MODULE "P18"
+reference "P18"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  4.595276  6.662598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P18
+
+$MODULE "P19"
+reference "P19"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  5.195276  6.112598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P19
+
+$MODULE "P20"
+reference "P20"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  4.795276  6.112598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P20
+
+$MODULE "P21"
+reference "P21"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  4.395276  6.112598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P21
+
+$MODULE "P22"
+reference "P22"
+value "CONN_1"
+footprint "Connect:1pin"
+attribut none
+position  3.995276  6.112598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.160000  0.160000
+drill  0.120000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  P22
+
+$MODULE "Q1"
+reference "Q1"
+value "BD241A"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position 10.246260  1.471260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  Q1
+
+$MODULE "Q2"
+reference "Q2"
+value "BD241A"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position 10.246260  2.896260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  Q2
+
+$MODULE "Q3"
+reference "Q3"
+value "BD242"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  9.696260  5.421260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  Q3
+
+$MODULE "R15"
+reference "R15"
+value "1k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.396260  2.196260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R15
+
+$MODULE "R16"
+reference "R16"
+value "1k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position 10.421260  4.596260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R16
+
+$MODULE "R17"
+reference "R17"
+value "1k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.346260  5.971260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R17
+
+$MODULE "R19"
+reference "R19"
+value "750"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.525000  3.925000
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R19
+
+$MODULE "R20"
+reference "R20"
+value "1.5k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.871260  3.471260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R20
+
+$MODULE "R21"
+reference "R21"
+value "R"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM15mm"
+attribut none
+position  5.145276  3.412598
+orientation  0.00
+layer component
+$PAD "1"
+position -0.295300  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.304700  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R21
+
+$MODULE "R22"
+reference "R22"
+value "R"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM15mm"
+attribut none
+position  2.746850  3.506299
+orientation  0.00
+layer component
+$PAD "1"
+position -0.295300  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.304700  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R22
+
+$MODULE "R23"
+reference "R23"
+value "56"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.196260  3.796260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R23
+
+$MODULE "R24"
+reference "R24"
+value "56"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.196260  1.496260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R24
+
+$MODULE "R25"
+reference "R25"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.796260  3.846260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R25
+
+$MODULE "R26"
+reference "R26"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.793760  1.543760
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R26
+
+$MODULE "R27"
+reference "R27"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.796260  3.996260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R27
+
+$MODULE "R28"
+reference "R28"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.793760  1.693760
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R28
+
+$MODULE "R29"
+reference "R29"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.996260  4.346260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R29
+
+$MODULE "R30"
+reference "R30"
+value "22k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  8.006260  2.056260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R30
+
+$MODULE "R31"
+reference "R31"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.796260  5.196260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R31
+
+$MODULE "R32"
+reference "R32"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.796260  5.046260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R32
+
+$MODULE "R35"
+reference "R35"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.321260  5.296260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R35
+
+$MODULE "R36"
+reference "R36"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.796260  5.346260
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R36
+
+$MODULE "R37"
+reference "R37"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  6.946260  5.296260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R37
+
+$MODULE "R38"
+reference "R38"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.446260  4.146260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R38
+
+$MODULE "R39"
+reference "R39"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  6.796260  5.296260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R39
+
+$MODULE "R40"
+reference "R40"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.046260  4.296260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R40
+
+$MODULE "R41"
+reference "R41"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.793760  2.893760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R41
+
+$MODULE "R42"
+reference "R42"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.793760  2.743760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R42
+
+$MODULE "R43"
+reference "R43"
+value "24k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.143760  2.593760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R43
+
+$MODULE "R44"
+reference "R44"
+value "24k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.468760  2.993760
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R44
+
+$MODULE "R45"
+reference "R45"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.318760  2.993760
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R45
+
+$MODULE "R46"
+reference "R46"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.793760  3.043760
+orientation  0.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R46
+
+$MODULE "R47"
+reference "R47"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  6.943760  2.993760
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R47
+
+$MODULE "R48"
+reference "R48"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.443760  1.843760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R48
+
+$MODULE "R49"
+reference "R49"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  6.793760  2.993760
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R49
+
+$MODULE "R50"
+reference "R50"
+value "2.2k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.043760  1.993760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R50
+
+$MODULE "T1"
+reference "T1"
+value "TRIAD-FS20-300-C2"
+footprint "my-trafos:TRIAD_FS16_400_C2"
+attribut none
+position  3.995276  4.412598
+orientation  270.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.250000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.600000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.850000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.000000 -1.280000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.250000 -1.280000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "7"
+position  0.600000 -1.280000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "8"
+position  0.850000 -1.280000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  T1
+
+$MODULE "T2"
+reference "T2"
+value "TRIAD-FS48-750-C2"
+footprint "my-trafos:TRIAD_FS48_750_C2"
+attribut none
+position  1.845276  6.062598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.400000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.800000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "4"
+position  1.200000  0.000000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.000000 -1.850000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.400000 -1.850000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "7"
+position  0.800000 -1.850000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "8"
+position  1.200000 -1.850000
+size  0.120000  0.120000
+drill  0.059843
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  T2
+
+$MODULE "U4"
+reference "U4"
+value "2N6507"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  9.946260  0.946260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U4
+
+$MODULE "U5"
+reference "U5"
+value "2N6507"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  9.921260  2.396260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U5
+
+$MODULE "U6"
+reference "U6"
+value "2N6507"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position 10.196260  5.171260
+orientation  0.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U6
+
+$MODULE "U7"
+reference "U7"
+value "REF02"
+footprint "Sockets_DIP:DIP-8__300_ELL"
+attribut none
+position  9.083760  3.933760
+orientation  90.00
+layer component
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position -0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position -0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U7
+
+$MODULE "U8"
+reference "U8"
+value "2N6507"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  9.771260  6.146260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U8
+
+$MODULE "U10"
+reference "U10"
+value "P0300ECL"
+footprint "Housings_TO-92:TO-92-Free-inline-wide"
+attribut none
+position  4.245276  3.712598
+orientation  270.00
+layer component
+$PAD "3"
+position  0.000000  0.100000
+size  0.060000  0.060000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position  0.000000 -0.100000
+size  0.060000  0.060000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  U10
+
+$MODULE "U11"
+reference "U11"
+value "P0300ECL"
+footprint "Housings_TO-92:TO-92-Free-inline-wide"
+attribut none
+position  3.895276  3.712598
+orientation  270.00
+layer component
+$PAD "3"
+position  0.000000  0.100000
+size  0.060000  0.060000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position  0.000000 -0.100000
+size  0.060000  0.060000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  U11
+
+$MODULE "U12"
+reference "U12"
+value "MC7805C"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  5.095276  1.962598
+orientation  270.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  -270.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U12
+
+$MODULE "U13"
+reference "U13"
+value "LM7818CT"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  3.295276  1.662598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U13
+
+$MODULE "U14"
+reference "U14"
+value "LM7918CT"
+footprint "Transistors_TO-220:TO-220_Neutral123_Vertical_LargePads"
+attribut none
+position  1.845276  1.662598
+orientation  0.00
+layer component
+$SHAPE3D
+Na "Transistor_TO-220_Wings3d_RevB_03Sep2012/TO220-vert_RevB_Faktor03937_03Sep2012.wrl"
+Sc 0.3937 0.3937 0.3937
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "2"
+position  0.000000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.100000  0.000000
+size  0.137800  0.066900
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  90.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U14
+
+$MODULE "U15"
+reference "U15"
+value "LME49740"
+footprint "Sockets_DIP:DIP-14__300_ELL"
+attribut none
+position  7.496260  4.596260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "dil/dil_14.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.300000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.200000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position -0.100000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.000000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.100000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.200000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position  0.300000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position  0.300000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "9"
+position  0.200000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "10"
+position  0.100000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "11"
+position  0.000000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "12"
+position -0.100000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "13"
+position -0.200000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "14"
+position -0.300000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U15
+
+$MODULE "U16"
+reference "U16"
+value "LME49740"
+footprint "Sockets_DIP:DIP-14__300_ELL"
+attribut none
+position  7.493760  2.293760
+orientation  180.00
+layer component
+$SHAPE3D
+Na "dil/dil_14.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.300000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.200000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position -0.100000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.000000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.100000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.200000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position  0.300000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position  0.300000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "9"
+position  0.200000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "10"
+position  0.100000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "11"
+position  0.000000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "12"
+position -0.100000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "13"
+position -0.200000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "14"
+position -0.300000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U16
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position  5.245276  1.962598
+orientation  90.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position  1.845276  1.512598
+orientation  180.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position  3.295276  1.512598
+orientation  0.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "Sym"
+reference "Sym"
+value "Symbol_Highvoltage_Type2_CopperTop_Small"
+footprint "Footprint_Symbols:Symbol_Highvoltage_Type2_CopperTop_Small"
+attribut none
+position  1.968504  5.216535
+orientation  180.00
+layer copper
+$EndMODULE  Sym
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_5mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_5mm"
+attribut none
+position  4.133858  3.149606
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.196900  0.196900
+drill  0.196900
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "R34"
+reference "R34"
+value "24k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.471260  5.296260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R34
+
+$MODULE "R33"
+reference "R33"
+value "24k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  7.146260  4.896260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R33
+
+$MODULE "U1"
+reference "U1"
+value "OPA27"
+footprint "Sockets_DIP:DIP-8__300_ELL"
+attribut none
+position  9.658760  1.383760
+orientation  270.00
+layer component
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position -0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position -0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U1
+
+$MODULE "U2"
+reference "U2"
+value "OPA27"
+footprint "Sockets_DIP:DIP-8__300_ELL"
+attribut none
+position  9.646260  2.821260
+orientation  270.00
+layer component
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position -0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position -0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U2
+
+$MODULE "U3"
+reference "U3"
+value "OPA27"
+footprint "Sockets_DIP:DIP-8__300_ELL"
+attribut none
+position  9.771260  4.821260
+orientation  180.00
+layer component
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position -0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position -0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U3
+
+$MODULE "U9"
+reference "U9"
+value "OPA27"
+footprint "Sockets_DIP:DIP-8__300_ELL"
+attribut none
+position  9.833760  3.883760
+orientation  270.00
+layer component
+$SHAPE3D
+Na "dil/dil_8.wrl"
+Sc 1 1 1
+Of 0 0 0
+Ro 0 0 0
+$EndSHAPE3D
+$PAD "1"
+position -0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Circ
+Layer  both
+$EndPAD
+$PAD "2"
+position -0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "3"
+position  0.050000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "4"
+position  0.150000  0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "5"
+position  0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "6"
+position  0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "7"
+position -0.050000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$PAD "8"
+position -0.150000 -0.150000
+size  0.062000  0.090000
+drill  0.032000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  Rect
+Layer  both
+$EndPAD
+$EndMODULE  U9
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position  9.696260  5.571260
+orientation  180.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position 10.396260  2.896260
+orientation  270.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "HS"
+reference "HS"
+value "Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+footprint "Heatsinks:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm"
+attribut none
+position 10.396260  1.471260
+orientation  270.00
+layer component
+$PAD "1"
+position  0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.500000  0.000000
+size  0.236200  0.236200
+drill  0.098400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  HS
+
+$MODULE "R11"
+reference "R11"
+value "47"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.996260  1.421260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R11
+
+$MODULE "R8"
+reference "R8"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.996260  1.796260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R8
+
+$MODULE "R1"
+reference "R1"
+value "4.99k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.225000  1.175000
+orientation  90.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R1
+
+$MODULE "R13"
+reference "R13"
+value "47"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.721260  5.171260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R13
+
+$MODULE "R10"
+reference "R10"
+value "10k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.346260  5.171260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R10
+
+$MODULE "R3"
+reference "R3"
+value "4.99k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position 10.050000  4.400000
+orientation  0.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R3
+
+$MODULE "R9"
+reference "R9"
+value "4.99k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.996260  3.246260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R9
+
+$MODULE "R4"
+reference "R4"
+value "1k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.096260  2.771260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R4
+
+$MODULE "R2"
+reference "R2"
+value "4.99k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.300000  2.650000
+orientation  90.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R2
+
+$MODULE "R12"
+reference "R12"
+value "47"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.996260  2.871260
+orientation  270.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R12
+
+$MODULE "R14"
+reference "R14"
+value "1k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position  9.421260  0.771260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R14
+
+$MODULE "R5"
+reference "R5"
+value "3.32k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.546260  1.796260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R5
+
+$MODULE "R6"
+reference "R6"
+value "1.5k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.546260  3.221260
+orientation  90.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R6
+
+$MODULE "R18"
+reference "R18"
+value "1.5k"
+footprint "Resistors_ThroughHole:Resistor_Vertical_RM5mm"
+attribut none
+position  9.358760  3.558760
+orientation  180.00
+layer component
+$PAD "1"
+position -0.098400  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.098500  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R18
+
+$MODULE "R7"
+reference "R7"
+value "3.32k"
+footprint "Resistors_ThroughHole:Resistor_Horizontal_RM10mm"
+attribut none
+position 10.021260  4.196260
+orientation  180.00
+layer component
+$PAD "1"
+position -0.196900  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "2"
+position  0.203100  0.000000
+size  0.078700  0.078700
+drill  0.039400
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  R7
+
+$MODULE "C46"
+reference "C46"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2-5"
+attribut none
+position  8.071260  2.446260
+orientation  270.00
+layer component
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C46
+
+$MODULE "C47"
+reference "C47"
+value "10u"
+footprint "Capacitors_Elko_ThroughHole:Elko_vert_DM5_RM2-5"
+attribut none
+position  7.996260  4.746260
+orientation  270.00
+layer component
+$PAD "2"
+position  0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$PAD "1"
+position -0.050000  0.000000
+size  0.059100  0.059100
+drill  0.031500
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  both
+$EndPAD
+$EndMODULE  C47
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position  7.086614  0.984252
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position  8.759843  0.984252
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position  6.988189  3.543307
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position 10.334646  3.838583
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position 10.236220  6.102362
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "MH"
+reference "MH"
+value "MountingHole_3mm_RevA_Date21Jun2010"
+footprint "Mounting_Holes:MountingHole_3mm"
+attribut none
+position  7.086614  6.102362
+orientation  0.00
+layer component
+$PAD "1"
+position  0.000000  0.000000
+size  0.118100  0.118100
+drill  0.118100
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  MH
+
+$MODULE "FID"
+reference "FID"
+value "Fiducial_Modern_CopperBottom_RevC"
+footprint "Fiducials:Fiducial_Modern_CopperBottom"
+attribut none
+position  6.889764  0.787402
+orientation  0.00
+layer component
+$PAD "~"
+position  0.000000  0.000000
+size  0.189000  0.189000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  FID
+
+$MODULE "FID"
+reference "FID"
+value "Fiducial_Modern_CopperBottom_RevC"
+footprint "Fiducials:Fiducial_Modern_CopperBottom"
+attribut none
+position 10.433071  6.299213
+orientation  0.00
+layer component
+$PAD "~"
+position  0.000000  0.000000
+size  0.189000  0.189000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  FID
+
+$MODULE "FID"
+reference "FID"
+value "Fiducial_Modern_CopperBottom_RevC"
+footprint "Fiducials:Fiducial_Modern_CopperBottom"
+attribut none
+position  6.889764  6.299213
+orientation  0.00
+layer component
+$PAD "~"
+position  0.000000  0.000000
+size  0.189000  0.189000
+drill  0.000000
+shape_offset  0.000000  0.000000
+orientation  0.00
+Shape  ???
+Layer  none
+$EndPAD
+$EndMODULE  FID
+
+$MODULE "F1"
+reference "F1"
+value "FUSE"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  F1
+
+$MODULE "J1"
+reference "J1"
+value "RCA"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  J1
+
+$MODULE "J2"
+reference "J2"
+value "RCA"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  J2
+
+$MODULE "J3"
+reference "J3"
+value "IEC-C13-SOCKET"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  J3
+
+$MODULE "P2"
+reference "P2"
+value "CONN_6"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P2
+
+$MODULE "P3"
+reference "P3"
+value "CONN_6"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P3
+
+$MODULE "P6"
+reference "P6"
+value "CONN_2"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P6
+
+$MODULE "P7"
+reference "P7"
+value "CONN_2"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P7
+
+$MODULE "P14"
+reference "P14"
+value "CONN_2"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P14
+
+$MODULE "P15"
+reference "P15"
+value "CONN_2"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P15
+
+$MODULE "P16"
+reference "P16"
+value "CONN_2"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P16
+
+$MODULE "P17"
+reference "P17"
+value "CONN_4"
+footprint "Oddities:Dummy_Empty"
+attribut none
+position  5.856299  7.482284
+orientation  0.00
+layer component
+$EndMODULE  P17
+
+$LINE 
+start 6.692913 0.590551
+end 10.629921 0.590551
+width 0.003937
+$EndLINE 
+$LINE 
+start 6.692913 6.496063
+end 6.692913 0.590551
+width 0.003937
+$EndLINE 
+$LINE 
+start 10.629921 6.496063
+end 6.692913 6.496063
+width 0.003937
+$EndLINE 
+$LINE 
+start 10.629921 0.590551
+end 10.629921 6.496063
+width 0.003937
+$EndLINE 
+$LINE 
+start 1.082677 7.086614
+end 1.082677 0.590551
+width 0.003937
+$EndLINE 
+$LINE 
+start 5.610236 7.086614
+end 1.082677 7.086614
+width 0.003937
+$EndLINE 
+$LINE 
+start 5.610236 0.590551
+end 5.610236 7.086614
+width 0.003937
+$EndLINE 
+$LINE 
+start 1.082677 0.590551
+end 5.610236 0.590551
+width 0.003937
+$EndLINE 
+$EndDESCRIPTION
