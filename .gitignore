@@ -1,3 +1,6 @@
 *.bak
 *.kicad_pcb-bak
 *\ -\ autosave\ *.TSC
+firmware/.metadata
+firmware/I2S to USB FS bridge/Debug
+firmware/I2S to USB FS bridge/Release
