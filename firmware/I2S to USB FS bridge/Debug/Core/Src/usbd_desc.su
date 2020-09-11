@@ -1,0 +1,9 @@
+usbd_desc.c:127:10:USBD_Class_DeviceDescriptor	16	static
+usbd_desc.c:141:10:USBD_Class_LangIDStrDescriptor	16	static
+usbd_desc.c:155:10:USBD_Class_ProductStrDescriptor	16	static
+usbd_desc.c:174:10:USBD_Class_ManufacturerStrDescriptor	16	static
+usbd_desc.c:188:10:USBD_Class_SerialStrDescriptor	16	static
+usbd_desc.c:206:10:USBD_Class_ConfigStrDescriptor	16	static
+usbd_desc.c:225:10:USBD_Class_InterfaceStrDescriptor	16	static
+usbd_desc.c:243:13:Get_SerialNum	24	static
+usbd_desc.c:301:13:IntToUnicode	32	static
