@@ -18,8 +18,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USBD_DESC_TEMPLATE_H
-#define __USBD_DESC_TEMPLATE_H
+#ifndef __USBD_DESC_I2S_to_USB_H
+#define __USBD_DESC_I2S_to_USB_H
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_def.h"
@@ -34,8 +34,8 @@
 
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-extern USBD_DescriptorsTypeDef Class_Desc; /* Replace 'XXX_Desc' with your active USB device class, ex: HID_Desc */
+extern USBD_DescriptorsTypeDef I2S_to_USB_Desc; /* Replace 'XXX_Desc' with your active USB device class, ex: HID_Desc */
 
-#endif /* __USBD_DESC_TEMPLATE_H*/
+#endif /* __USBD_DESC_I2S_to_USB_H*/
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

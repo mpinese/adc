@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file    usbd_template_core.h
+  * @file    usbd_I2S_to_USB_core.h
   * @author  MCD Application Team
-  * @brief   Header file for the usbd_template_core.c file.
+  * @brief   Header file for the usbd_I2S_to_USB_core.c file.
   ******************************************************************************
   * @attention
   *
@@ -18,8 +18,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USB_TEMPLATE_CORE_H
-#define __USB_TEMPLATE_CORE_H
+#ifndef __USB_I2S_to_USB_CORE_H
+#define __USB_I2S_to_USB_CORE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,18 +33,18 @@ extern "C" {
   */
 
 /** @defgroup USBD_TEMPLATE
-  * @brief This file is the header file for usbd_template_core.c
+  * @brief This file is the header file for usbd_I2S_to_USB_core.c
   * @{
   */
 
 
-/** @defgroup USBD_TEMPLATE_Exported_Defines
+/** @defgroup USBD_I2S_to_USB_Exported_Defines
   * @{
   */
-#define TEMPLATE_EPIN_ADDR                 0x81U	/* 10000001 (input #1) */
-#define TEMPLATE_EPOUT_ADDR                0x01U    /* 00000001 (output #1) */
+#define I2S_TO_USB_EPIN_ADDR                 0x81U	/* 10000001 (input #1) */
+#define I2S_TO_USB_EPOUT_ADDR                0x01U    /* 00000001 (output #1) */
 
-#define USB_TEMPLATE_CONFIG_DESC_SIZ       32U		/* Must match size of USBD_TEMPLATE_CfgDesc in usbd_i2s_to_usb.c */
+#define I2S_TO_USB_CONFIG_DESC_SIZ       (USB_LEN_CFG_DESC+USB_LEN_IF_DESC+USB_LEN_EP_DESC+USB_LEN_EP_DESC)
 
 /**
   * @}
@@ -73,7 +73,7 @@ extern "C" {
   * @{
   */
 
-extern USBD_ClassTypeDef USBD_TEMPLATE_ClassDriver;
+extern USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver;
 /**
   * @}
   */
@@ -89,7 +89,7 @@ extern USBD_ClassTypeDef USBD_TEMPLATE_ClassDriver;
 }
 #endif
 
-#endif  /* __USB_TEMPLATE_CORE_H */
+#endif  /* __USB_I2S_to_USB_CORE_H */
 /**
   * @}
   */

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="USBD_LL_DataOutStage"/>
+		<item key="selection" value="_I2S_to_USB_"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="_TEMPLATE_"/>
 			<item value="USBD_IDX_MFC_STR"/>
 			<item value="USBD_LL_DataOutStage"/>
 			<item value="Class_Desc"/>
@@ -16,6 +17,7 @@
 			<item value="XXX"/>
 		</list>
 		<list key="replacehistory">
+			<item value="_I2S_to_USB_"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
