@@ -1494,7 +1494,7 @@
     (tags "capacitor tantalum")
     (path /5F5CE669)
     (attr smd)
-    (fp_text reference C3 (at -3.25 -2.75 180) (layer F.SilkS)
+    (fp_text reference C3 (at 0 2.75 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 100u (at 0 2.35 90) (layer F.Fab)

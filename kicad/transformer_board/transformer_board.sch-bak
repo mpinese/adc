@@ -545,27 +545,27 @@ F 4 "565-3923-ND" H 6500 4600 50  0001 C CNN "DigiKey"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:Heatsink HS1
+L Mechanical:Heatsink HS2
 U 1 1 5F4E5E6F
-P 7900 5900
-F 0 "HS1" H 8042 6021 50  0000 L CNN
-F 1 "Heatsink" H 8042 5930 50  0000 L CNN
-F 2 "project_footprints:AAVID_504102B00000G" H 7912 5900 50  0001 C CNN
-F 3 "https://www.boydcorp.com/aavid-datasheets/Board-Level-Cooling-Channel-5040.pdf" H 7912 5900 50  0001 C CNN
-F 4 "HS104-1-ND" H 7900 5900 50  0001 C CNN "DigiKey"
-	1    7900 5900
+P 8550 5850
+F 0 "HS2" H 8692 5971 50  0000 L CNN
+F 1 "Heatsink" H 8692 5880 50  0000 L CNN
+F 2 "project_footprints:AAVID_504102B00000G" H 8562 5850 50  0001 C CNN
+F 3 "https://www.boydcorp.com/aavid-datasheets/Board-Level-Cooling-Channel-5040.pdf" H 8562 5850 50  0001 C CNN
+F 4 "HS104-1-ND" H 8550 5850 50  0001 C CNN "DigiKey"
+	1    8550 5850
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:Heatsink HS2
+L Mechanical:Heatsink HS1
 U 1 1 5F4E7B6F
-P 8600 5900
-F 0 "HS2" H 8742 6021 50  0000 L CNN
-F 1 "Heatsink" H 8742 5930 50  0000 L CNN
-F 2 "project_footprints:AAVID_504102B00000G" H 8612 5900 50  0001 C CNN
-F 3 "https://www.boydcorp.com/aavid-datasheets/Board-Level-Cooling-Channel-5040.pdf" H 8612 5900 50  0001 C CNN
-F 4 "HS104-1-ND" H 8600 5900 50  0001 C CNN "DigiKey"
-	1    8600 5900
+P 7900 5850
+F 0 "HS1" H 8042 5971 50  0000 L CNN
+F 1 "Heatsink" H 8042 5880 50  0000 L CNN
+F 2 "project_footprints:AAVID_504102B00000G" H 7912 5850 50  0001 C CNN
+F 3 "https://www.boydcorp.com/aavid-datasheets/Board-Level-Cooling-Channel-5040.pdf" H 7912 5850 50  0001 C CNN
+F 4 "HS104-1-ND" H 7900 5850 50  0001 C CNN "DigiKey"
+	1    7900 5850
 	1    0    0    -1  
 $EndComp
 Text Notes 7750 5600 0    50   ~ 0
