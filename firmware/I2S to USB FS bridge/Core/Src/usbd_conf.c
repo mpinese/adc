@@ -40,14 +40,29 @@ extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
  * @param  hal_status: HAL status
  * @retval USB status
  */
-static USBD_StatusTypeDef USBD_Get_USB_Status(HAL_StatusTypeDef hal_status)
+USBD_StatusTypeDef USBD_Get_USB_Status(HAL_StatusTypeDef hal_status)
 {
-	if (hal_status == HAL_OK)
-		return USBD_OK;
-	else if (hal_status == HAL_BUSY)
-		return USBD_BUSY;
-	else
-		return USBD_FAIL;
+  USBD_StatusTypeDef usb_status = USBD_OK;
+
+  switch (hal_status)
+  {
+    case HAL_OK :
+      usb_status = USBD_OK;
+    break;
+    case HAL_ERROR :
+      usb_status = USBD_FAIL;
+    break;
+    case HAL_BUSY :
+      usb_status = USBD_BUSY;
+    break;
+    case HAL_TIMEOUT :
+      usb_status = USBD_FAIL;
+    break;
+    default :
+      usb_status = USBD_FAIL;
+    break;
+  }
+  return usb_status;
 }
 
 /**
@@ -60,9 +75,9 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
 	hpcd_USB_OTG_FS.pData = pdev;
 	pdev->pData = &hpcd_USB_OTG_FS;
 	// The STM32F703R8 FS peripheral has 1.28 KB (320 words) FIFO for TX + RX combined.
-	HAL_PCDEx_SetRxFiFo(&hpcd_USB_OTG_FS, 16);		// All OUT endpoints (shared)
-	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 0, 288);	// IN endpoint 0 (bulk, data)
-	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 1, 16);	// IN endpoint 1 (interrupt, control)
+	HAL_PCDEx_SetRxFiFo(&hpcd_USB_OTG_FS, 0x80);		// All OUT endpoints (shared)
+	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 0, 0x40);	// IN endpoint 0 (bulk, data)
+	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 1, 0x80);	// IN endpoint 1 (interrupt, control)
 
 	return USBD_OK;
 }
@@ -111,8 +126,8 @@ USBD_StatusTypeDef USBD_LL_Stop(USBD_HandleTypeDef *pdev)
 USBD_StatusTypeDef USBD_LL_OpenEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr,
 		uint8_t ep_type, uint16_t ep_mps)
 {
-	HAL_StatusTypeDef const hal_status = HAL_PCD_EP_Close(pdev->pData, ep_addr);
-	pdev->ep_in[ep_addr & 0x7F].is_used = 0;
+	HAL_StatusTypeDef const hal_status = HAL_PCD_EP_Open(pdev->pData, ep_addr, ep_mps, ep_type);
+	pdev->ep_in[ep_addr & 0x7F].is_used = 1;
 	return USBD_Get_USB_Status(hal_status);
 }
 
@@ -191,8 +206,7 @@ uint8_t USBD_LL_IsStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)
 USBD_StatusTypeDef USBD_LL_SetUSBAddress(USBD_HandleTypeDef *pdev,
 		uint8_t dev_addr)
 {
-	HAL_StatusTypeDef const hal_status = HAL_PCD_SetAddress(pdev->pData,
-			dev_addr);
+	HAL_StatusTypeDef const hal_status = HAL_PCD_SetAddress(pdev->pData, dev_addr);
 	return USBD_Get_USB_Status(hal_status);
 }
 
