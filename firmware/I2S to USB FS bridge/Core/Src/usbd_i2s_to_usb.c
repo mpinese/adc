@@ -300,6 +300,8 @@ static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev,
 	 */
 	if (req->bmRequest & USB_REQ_TYPE_MASK != USB_REQ_TYPE_VENDOR)
 	{
+		sprintf(buf, "Unexpected bmRequest received. bmRequest=%#x\r\n", req->bmRequest);
+		HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 		USBD_CtlError(pdev, req);
 		return (uint8_t) USBD_FAIL;
 	}
@@ -309,8 +311,8 @@ static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev,
 	 * Extract the signal and act on it.
 	 */
 
-//	sprintf(buf, "Signal = %d\n", (req->bRequest & 0xC0) >> 6);
-//	HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
+	sprintf(buf, "Signal = %d\r\n", (req->bRequest & 0xC0) >> 6);
+	HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 
 	switch ((req->bRequest & 0xC0) >> 6)
 	{
@@ -319,24 +321,34 @@ static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev,
 		 * Request data: None
 		 * Data packet follows: Yes (status)
 		 */
+		sprintf(buf, "Command received: Report status\r\n");
+		HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 		break;
 	case 1:
 		/* Command: Start acquisition.
 		 * Request data: None
 		 * Data packet follows: No
 		 */
+		sprintf(buf, "Command received: Start acquisition\r\n");
+		HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 		break;
 	case 2:
 		/* Command: Stop acquisition.
 		 * Request data: None
 		 * Data packet follows: No
 		 */
+		sprintf(buf, "Command received: Stop acquisition\r\n");
+		HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 		break;
 	default:
+		sprintf(buf, "Command received: Invalid code (bRequest=%#x, command=%d)\r\n", req->bRequest, (req->bRequest & 0xC0) >> 6);
+		HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
 		USBD_CtlError(pdev, req);
 		return (uint8_t) USBD_FAIL;
 	}
 
+	/* Acknowledge the control signal and return */
+	USBD_CtlSendStatus(pdev);
 	return (uint8_t) USBD_OK;
 }
 

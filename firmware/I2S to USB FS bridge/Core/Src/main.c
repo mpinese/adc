@@ -52,6 +52,20 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 USBD_HandleTypeDef hUsbDeviceFS;
+
+/* Global variable: state machine state. Shared between this and usbd_i2s_to_usb.c */
+uint8_t g_state = 0;
+
+/* Global variable. Shared between this and usbd_i2s_to_usb.c */
+uint32_t g_
+
+/* Global variable: I2S data buffer. Shared between this and usbd_i2s_to_usb.c */
+#if defined ( __ICCARM__ ) /*!< IAR Compiler */
+#pragma data_alignment=4
+#endif
+__ALIGN_BEGIN uint8_t g_signal_buffer[192*1024] __ALIGN_END;
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,8 +129,8 @@ int main(void)
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
-		HAL_Delay(1000);
-		HAL_UART_Transmit(&huart2, "Test1\t\n", 7, 1000);
+//		HAL_Delay(1000);
+//		HAL_UART_Transmit(&huart2, "Test1\t\n", 7, 1000);
 	}
 	/* USER CODE END 3 */
 }
