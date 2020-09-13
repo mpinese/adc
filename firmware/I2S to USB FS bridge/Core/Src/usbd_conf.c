@@ -75,9 +75,9 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
 	hpcd_USB_OTG_FS.pData = pdev;
 	pdev->pData = &hpcd_USB_OTG_FS;
 	// The STM32F703R8 FS peripheral has 1.28 KB (320 words) FIFO for TX + RX combined.
-	HAL_PCDEx_SetRxFiFo(&hpcd_USB_OTG_FS, 0x80);		// All OUT endpoints (shared)
-	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 0, 0x40);	// IN endpoint 0 (bulk, data)
-	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 1, 0x80);	// IN endpoint 1 (interrupt, control)
+	HAL_PCDEx_SetRxFiFo(&hpcd_USB_OTG_FS, 0x40);		// All OUT endpoints (shared). Note that 0x40 works, but 0x20 doesn't -- fails USB enum.
+	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 0, 0x40);		// IN endpoint 0 (interrupt, control)
+	HAL_PCDEx_SetTxFiFo(&hpcd_USB_OTG_FS, 1, 0xC0);		// IN endpoint 1 (bulk, data)
 
 	return USBD_OK;
 }

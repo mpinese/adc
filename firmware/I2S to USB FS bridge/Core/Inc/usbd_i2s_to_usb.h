@@ -42,7 +42,7 @@ extern "C" {
   * @{
   */
 #define I2S_TO_USB_EPIN_ADDR                 0x81U	/* 10000001 (input #1) */
-#define I2S_TO_USB_EPOUT_ADDR                0x01U    /* 00000001 (output #1) */
+#define I2S_TO_USB_EPOUT_ADDR                0x01U  /* 00000001 (output #1) */
 
 #define I2S_TO_USB_CONFIG_DESC_SIZ       (USB_LEN_CFG_DESC+USB_LEN_IF_DESC+USB_LEN_EP_DESC+USB_LEN_EP_DESC)
 

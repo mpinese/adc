@@ -86,14 +86,11 @@
 static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_I2S_to_USB_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req);
+static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev);
+static uint8_t USBD_I2S_to_USB_EP0_RxReady(USBD_HandleTypeDef *pdev);
 static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum);
 static uint8_t USBD_I2S_to_USB_DataOut(USBD_HandleTypeDef *pdev, uint8_t epnum);
-static uint8_t USBD_I2S_to_USB_EP0_RxReady(USBD_HandleTypeDef *pdev);
-static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev);
 static uint8_t USBD_I2S_to_USB_SOF(USBD_HandleTypeDef *pdev);
-static uint8_t USBD_I2S_to_USB_IsoINIncomplete(USBD_HandleTypeDef *pdev, uint8_t epnum);
-static uint8_t USBD_I2S_to_USB_IsoOutIncomplete(USBD_HandleTypeDef *pdev, uint8_t epnum);
-
 static uint8_t *USBD_I2S_to_USB_GetCfgDesc(uint16_t *length);
 static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length);
 /**
@@ -104,41 +101,28 @@ static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length);
   * @{
   */
 
+/* Class callbacks */
 USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver =
 {
-  USBD_I2S_to_USB_Init,
-  USBD_I2S_to_USB_DeInit,
-  USBD_I2S_to_USB_Setup,
-  USBD_I2S_to_USB_EP0_TxReady,
-  USBD_I2S_to_USB_EP0_RxReady,
-  USBD_I2S_to_USB_DataIn,
-  USBD_I2S_to_USB_DataOut,
-  USBD_I2S_to_USB_SOF,
-  USBD_I2S_to_USB_IsoINIncomplete,
-  USBD_I2S_to_USB_IsoOutIncomplete,
-  USBD_I2S_to_USB_GetCfgDesc,
-  USBD_I2S_to_USB_GetCfgDesc,
-  USBD_I2S_to_USB_GetCfgDesc,
-  USBD_I2S_to_USB_GetDeviceQualifierDesc,
+  USBD_I2S_to_USB_Init,			/* Init */
+  USBD_I2S_to_USB_DeInit,		/* DeInit */
+
+  /* Control endpoints */
+  USBD_I2S_to_USB_Setup,		/* Setup (non-standard EP0 setup packets are forwarded here) */
+  NULL,							/* EP0_TxSent  (EP0 IN) */
+  NULL,							/* EP0_RxReady (EP0 OUT) */
+
+  /* Class-specific endpoints */
+  USBD_I2S_to_USB_DataIn,		/* DataIn */
+  USBD_I2S_to_USB_DataOut,		/* DataOut */
+  NULL,							/* SOF */
+  NULL,							/* IsoINIncomplete */
+  NULL,							/* IsoOUTIncomplete */
+  NULL,							/* GetHSConfigDescriptor */
+  USBD_I2S_to_USB_GetCfgDesc,	/* GetFSConfigDescriptor */
+  NULL,							/* GetOtherSpeedConfigDescriptor */
+  USBD_I2S_to_USB_GetDeviceQualifierDesc,	/* GetDeviceQualifierDescriptor */
 };
-//
-//USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver =
-//{
-//  USBD_I2S_to_USB_Init,
-//  USBD_I2S_to_USB_DeInit,
-//  NULL,
-//  NULL,
-//  NULL,
-//  USBD_I2S_to_USB_DataIn,
-//  USBD_I2S_to_USB_DataOut,
-//  NULL,
-//  NULL,
-//  NULL,
-//  NULL,
-//  USBD_I2S_to_USB_GetCfgDesc,
-//  NULL,
-//  USBD_I2S_to_USB_GetDeviceQualifierDesc,
-//};
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 #pragma data_alignment=4
@@ -154,13 +138,12 @@ __ALIGN_BEGIN static uint8_t USBD_I2S_to_USB_CfgDesc[I2S_TO_USB_CONFIG_DESC_SIZ]
   0x01,         /* bConfigurationValue: Configuration value*/
   0x00,			/* iConfiguration: Index of string descriptor describing the configuration*/
   0xC0,         /* bmAttributes: self-powered */
-//  0x00,         /* MaxPower 0 mA (self-powered) */
-  0x32,         /* MaxPower 100 mA */
+  0x00,         /* MaxPower 0 mA (self-powered) */
   /* 09d */
 
   /* Interface 0 */
-  USB_LEN_IF_DESC,         /* bLength */
-  USB_DESC_TYPE_INTERFACE,  		/* bDescriptorType: Interface */
+  USB_LEN_IF_DESC,         	/* bLength */
+  USB_DESC_TYPE_INTERFACE,	/* bDescriptorType: Interface */
   0x01,         /* bInterfaceNumber */
   0x00,         /* bAlternateSetting */
   0x02,         /* bNumEndpoints */
@@ -221,7 +204,7 @@ __ALIGN_BEGIN static uint8_t USBD_I2S_to_USB_DeviceQualifierDesc[USB_LEN_DEV_QUA
 
 /**
   * @brief  USBD_I2S_to_USB_Init
-  *         Initialize the TEMPLATE interface
+  *         Initialize the I2S_to_USB interface
   * @param  pdev: device instance
   * @param  cfgidx: Configuration index
   * @retval status
@@ -234,7 +217,7 @@ static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 
 /**
   * @brief  USBD_I2S_to_USB_Init
-  *         DeInitialize the TEMPLATE layer
+  *         DeInitialize the I2S_to_USB layer
   * @param  pdev: device instance
   * @param  cfgidx: Configuration index
   * @retval status
@@ -247,72 +230,115 @@ static uint8_t USBD_I2S_to_USB_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 
 /**
   * @brief  USBD_I2S_to_USB_Setup
-  *         Handle the TEMPLATE specific requests
+  *         Handle the I2S_to_USB specific requests
   * @param  pdev: instance
   * @param  req: usb requests
   * @retval status
   */
+extern UART_HandleTypeDef huart2;
+
 static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev,
-                                   USBD_SetupReqTypedef *req)
+		USBD_SetupReqTypedef *req)
 {
-  USBD_StatusTypeDef ret = USBD_OK;
+	/*
+	 * The library passes all the non-standard requests to the class-specific
+	 * code with the callback pdev->pClass->Setup (pdev, req) function.
+	 *
+	 * The non-standard requests include the user-interpreted requests and the
+	 * invalid requests. User-interpreted requests are class- specific requests,
+	 * vendor-specific requests or the requests that the library considers as
+	 * invalid requests that the application wants to interpret as valid requests.
+	 *
+	 * Invalid requests are the requests that are not standard requests and are
+	 * not user-interpreted requests. Since pdev->pClass->Setup (pdev, req) is
+	 * called after the SETUP stage and before the data stage, user code is
+	 * responsible, in thepdev->pClass->Setup (pdev, req) to parse the content
+	 * of the SETUP packet (req). If a request is invalid, the user code has to
+	 * call USBD_CtlError(pdev , req) and return to the caller of
+	 * pdev->pClass->Setup (pdev, req)
+	 *
+	 * For a user-interpreted request, the user code prepares the data buffer for
+	 * the following data stage if the request has a data stage; otherwise the
+	 * user code executes the request and returns to the caller of
+	 * pdev->pClass->Setup (pdev, req).
+	 *
+	 * bmRequestType mask:
+	 *   7		Direction
+	 *   		0 = Host to device
+	 *   		1 = Device to host
+	 *   6..5	Type (USB_REQ_TYPE_MASK)
+	 *   		0 = Standard
+	 *   		1 = Class
+	 *   		2 = Vendor
+	 *   		3 = Reserved
+	 *   4..0	Recipient
+	 *   		0 = Device
+	 *   		1 = Interface
+	 *   		2 = Endpoint
+	 *   		3 = Other
+	 *   		4..31 = Reserved
+	 */
 
-  switch (req->bmRequest & USB_REQ_TYPE_MASK)
-  {
-  case USB_REQ_TYPE_CLASS :
-    switch (req->bRequest)
-    {
-    default:
-      USBD_CtlError(pdev, req);
-      ret = USBD_FAIL;
-      break;
-    }
-    break;
+	/* Host to device signals to implement in this class:
+	 *
+	 * Signal	Command				Request data	Data packet from device follows?
+	 * 0		Report status		None			Yes
+	 * 1		Start acquisition	None			No
+	 * 2		Stop acquisition	None			No
+	 * 3		Reserved
+	 *
+	 * Signal is contained in the upper two bits of req->bRequest
+	 * (req->bRequest & 0xC0)
+	 */
 
-  case USB_REQ_TYPE_STANDARD:
-    switch (req->bRequest)
-    {
-    default:
-      USBD_CtlError(pdev, req);
-      ret = USBD_FAIL;
-      break;
-    }
-    break;
+	char buf[64];
 
-  default:
-    USBD_CtlError(pdev, req);
-    ret = USBD_FAIL;
-    break;
-  }
+	/* This class only ever expects user-interpreted requests of type
+	 * Vendor. Anything else that shows up is therefore an invalid request
+	 * that was passed through by the library, so immediately call
+	 * USBD_CtlError and return for these.
+	 */
+	if (req->bmRequest & USB_REQ_TYPE_MASK != USB_REQ_TYPE_VENDOR)
+	{
+		USBD_CtlError(pdev, req);
+		return (uint8_t) USBD_FAIL;
+	}
 
-  return (uint8_t)ret;
+	/* We now know that we have a vendor request (ie
+	 * req->bmRequest & USB_REQ_TYPE_MASK == USB_REQ_TYPE_VENDOR).
+	 * Extract the signal and act on it.
+	 */
+
+//	sprintf(buf, "Signal = %d\n", (req->bRequest & 0xC0) >> 6);
+//	HAL_UART_Transmit(&huart2, buf, strlen(buf), 1000);
+
+	switch ((req->bRequest & 0xC0) >> 6)
+	{
+	case 0:
+		/* Command: Report status.
+		 * Request data: None
+		 * Data packet follows: Yes (status)
+		 */
+		break;
+	case 1:
+		/* Command: Start acquisition.
+		 * Request data: None
+		 * Data packet follows: No
+		 */
+		break;
+	case 2:
+		/* Command: Stop acquisition.
+		 * Request data: None
+		 * Data packet follows: No
+		 */
+		break;
+	default:
+		USBD_CtlError(pdev, req);
+		return (uint8_t) USBD_FAIL;
+	}
+
+	return (uint8_t) USBD_OK;
 }
-
-
-/**
-  * @brief  USBD_I2S_to_USB_GetCfgDesc
-  *         return configuration descriptor
-  * @param  length : pointer data length
-  * @retval pointer to descriptor buffer
-  */
-static uint8_t *USBD_I2S_to_USB_GetCfgDesc(uint16_t *length)
-{
-  *length = (uint16_t)sizeof(USBD_I2S_to_USB_CfgDesc);
-  return USBD_I2S_to_USB_CfgDesc;
-}
-
-/**
-* @brief  DeviceQualifierDescriptor
-*         return Device Qualifier descriptor
-* @param  length : pointer data length
-* @retval pointer to descriptor buffer
-*/
-uint8_t *USBD_I2S_to_USB_DeviceQualifierDescriptor(uint16_t *length)
-{
-  *length = (uint16_t)sizeof(USBD_I2S_to_USB_DeviceQualifierDesc);
-  return USBD_I2S_to_USB_DeviceQualifierDesc;
-}
-
 
 /**
   * @brief  USBD_I2S_to_USB_DataIn
@@ -338,6 +364,7 @@ static uint8_t USBD_I2S_to_USB_EP0_RxReady(USBD_HandleTypeDef *pdev)
 
   return (uint8_t)USBD_OK;
 }
+
 /**
   * @brief  USBD_I2S_to_USB_EP0_TxReady
   *         handle EP0 TRx Ready event
@@ -349,41 +376,7 @@ static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev)
 
   return (uint8_t)USBD_OK;
 }
-/**
-  * @brief  USBD_I2S_to_USB_SOF
-  *         handle SOF event
-  * @param  pdev: device instance
-  * @retval status
-  */
-static uint8_t USBD_I2S_to_USB_SOF(USBD_HandleTypeDef *pdev)
-{
 
-  return (uint8_t)USBD_OK;
-}
-/**
-  * @brief  USBD_I2S_to_USB_IsoINIncomplete
-  *         handle data ISO IN Incomplete event
-  * @param  pdev: device instance
-  * @param  epnum: endpoint index
-  * @retval status
-  */
-static uint8_t USBD_I2S_to_USB_IsoINIncomplete(USBD_HandleTypeDef *pdev, uint8_t epnum)
-{
-
-  return (uint8_t)USBD_OK;
-}
-/**
-  * @brief  USBD_I2S_to_USB_IsoOutIncomplete
-  *         handle data ISO OUT Incomplete event
-  * @param  pdev: device instance
-  * @param  epnum: endpoint index
-  * @retval status
-  */
-static uint8_t USBD_I2S_to_USB_IsoOutIncomplete(USBD_HandleTypeDef *pdev, uint8_t epnum)
-{
-
-  return (uint8_t)USBD_OK;
-}
 /**
   * @brief  USBD_I2S_to_USB_DataOut
   *         handle data OUT Stage
@@ -395,6 +388,18 @@ static uint8_t USBD_I2S_to_USB_DataOut(USBD_HandleTypeDef *pdev, uint8_t epnum)
 {
 
   return (uint8_t)USBD_OK;
+}
+
+/**
+  * @brief  USBD_I2S_to_USB_GetCfgDesc
+  *         return configuration descriptor
+  * @param  length : pointer data length
+  * @retval pointer to descriptor buffer
+  */
+static uint8_t *USBD_I2S_to_USB_GetCfgDesc(uint16_t *length)
+{
+  *length = (uint16_t)sizeof(USBD_I2S_to_USB_CfgDesc);
+  return USBD_I2S_to_USB_CfgDesc;
 }
 
 /**
