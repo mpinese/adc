@@ -118,7 +118,7 @@ USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver =
   NULL,							/* SOF */
   NULL,							/* IsoINIncomplete */
   NULL,							/* IsoOUTIncomplete */
-  NULL,							/* GetHSConfigDescriptor */
+  USBD_I2S_to_USB_GetCfgDesc,	/* GetHSConfigDescriptor */
   USBD_I2S_to_USB_GetCfgDesc,	/* GetFSConfigDescriptor */
   NULL,							/* GetOtherSpeedConfigDescriptor */
   USBD_I2S_to_USB_GetDeviceQualifierDesc,	/* GetDeviceQualifierDescriptor */
