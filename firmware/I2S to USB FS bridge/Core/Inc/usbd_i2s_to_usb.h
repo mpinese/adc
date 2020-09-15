@@ -81,6 +81,8 @@ extern USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver;
 /** @defgroup USB_CORE_Exported_Functions
   * @{
   */
+USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length);
+
 /**
   * @}
   */

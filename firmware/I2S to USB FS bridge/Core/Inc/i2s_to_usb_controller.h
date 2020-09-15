@@ -10,13 +10,17 @@
 
 #include "stm32f7xx_hal.h"
 
-#define I2S_BUFFER_WORDS	(192*1024/4)
+#define I2S_BUFFER_HALFWORDS	65534	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
+#define MAX_USB_XFERSIZE		512		/* In half words */
 
 typedef enum
 {
 	CONTROLLER_OK 				= 0x00U,
 	CONTROLLER_UNKNOWN_COMMAND	= 0x01U,
-	CONTROLLER_INVALID_COMMAND	= 0x02U
+	CONTROLLER_INVALID_COMMAND	= 0x02U,
+	CONTROLLER_I2S_DMA_ERROR	= 0x03U,
+	CONTROLLER_USB_BUSY			= 0x04U,
+	CONTROLLER_USB_ERROR		= 0x05U
 } Controller_StatusTypeDef;
 
 
@@ -35,16 +39,20 @@ typedef enum
  * TRANSITIONS
  * Source	Dest		Condition														Location
  * 0-Idle	1-ACQ10		USB command: start acquisition									controller_handle_usb_command
- * 1-ACQ10	2-ACQ21		Interrupt: DMA half full
- * 2-ACQ21	3-ACQ31		g_i2s_buffer_pos = I2S_BUFFER_WORDS*4 / 2
- * 3-ACQ31	4-ACQ12		Interrupt: DMA full
- * 4-ACQ12	1-ACQ10		g_i2s_buffer_pos = 0 (rolled over from I2S_BUFFER_WORDS*4)
+ * 1-ACQ10	2-ACQ21		Interrupt: DMA half full										HAL_I2S_RxHalfCpltCallback
+ * 2-ACQ21	3-ACQ31		g_i2s_buffer_pos = I2S_BUFFER_HALFWORDS / 2
+ * 3-ACQ31	4-ACQ12		Interrupt: DMA full												HAL_I2S_RxCpltCallback
+ * 4-ACQ12	1-ACQ10		g_i2s_buffer_pos = 0 (rolled over from I2S_BUFFER_HALFWORDS)
  * 1-ACQ10	0-Idle		USB command: stop acquisition									controller_handle_usb_command
  * 2-ACQ21	0-Idle		USB command: stop acquisition									controller_handle_usb_command
  * 3-ACQ31	0-Idle		USB command: stop acquisition									controller_handle_usb_command
  * 4-ACQ12	0-Idle		USB command: stop acquisition									controller_handle_usb_command
- * 2-ACQ21	5-BUFOVR	Interrupt: DMA full
- * 4-ACQ12	5-BUFOVR	Interrupt: DMA half full
+ * 2-ACQ21	5-BUFOVR	Interrupt: DMA full												HAL_I2S_RxCpltCallback
+ * 4-ACQ12	5-BUFOVR	Interrupt: DMA half full										HAL_I2S_RxHalfCpltCallback
+ * 1-ACQ10	5-BUFOVR	USB command: stop acquisition									HAL_I2S_ErrorCallback
+ * 2-ACQ21	5-BUFOVR	USB command: stop acquisition									HAL_I2S_ErrorCallback
+ * 3-ACQ31	5-BUFOVR	USB command: stop acquisition									HAL_I2S_ErrorCallback
+ * 4-ACQ12	5-BUFOVR	USB command: stop acquisition									HAL_I2S_ErrorCallback
  * 0-Idle	0-Idle		USB command: reset												controller_handle_usb_command
  * 5-BUFOVR	0-Idle		USB command: reset												controller_handle_usb_command
  */
@@ -62,5 +70,6 @@ Controller_StatusTypeDef controller_reset();
 Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		uint16_t wValue, uint16_t wIndex, uint16_t wLength, uint8_t *databuf,
 		uint16_t databuf_len);
+Controller_StatusTypeDef controller_attempt_upload();
 
 #endif /* INC_I2S_TO_USB_CONTROLLER_H_ */

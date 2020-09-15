@@ -125,8 +125,8 @@ void HAL_I2S_MspInit(I2S_HandleTypeDef* hi2s)
     hdma_spi2_rx.Init.MemInc = DMA_MINC_ENABLE;
     hdma_spi2_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
     hdma_spi2_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-    hdma_spi2_rx.Init.Mode = DMA_NORMAL;
-    hdma_spi2_rx.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_spi2_rx.Init.Mode = DMA_CIRCULAR;
+    hdma_spi2_rx.Init.Priority = DMA_PRIORITY_VERY_HIGH;
     hdma_spi2_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
     if (HAL_DMA_Init(&hdma_spi2_rx) != HAL_OK)
     {
