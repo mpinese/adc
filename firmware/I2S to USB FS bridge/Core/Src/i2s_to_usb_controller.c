@@ -63,6 +63,7 @@ Controller_StatusTypeDef controller_attempt_upload()
 	uint16_t hwords_to_xfer;
 	uint8_t last_xfer = 0;
 
+	DEBUG_PRINT("%d", g_state);
 	if (g_state == STATE_ACQ21)
 	{
 		/* We're reading from the first half of g_i2s_buffer, up to
@@ -90,7 +91,9 @@ Controller_StatusTypeDef controller_attempt_upload()
 	else
 		last_xfer = 1;
 
+	DEBUG_PRINT("\r\nCalling USB transmit");
 	usb_status = USBD_I2S_to_USB_Transmit((uint8_t*) g_i2s_buffer[g_i2s_buffer_pos], hwords_to_xfer*2);
+	DEBUG_PRINT("\r\nReturned status %d", usb_status);
 	if (usb_status == USBD_BUSY)
 		return CONTROLLER_USB_BUSY;
 	else if (usb_status != USBD_OK)
@@ -185,7 +188,11 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 */
 		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
 		if (hal_status != HAL_OK)
+		{
+			DEBUG_PRINT("\r\nDMA error");
 			return CONTROLLER_I2S_DMA_ERROR;
+		}
+		DEBUG_PRINT("\r\nOK");
 		g_state = STATE_ACQ10;
 
 		break;
@@ -241,6 +248,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 /* These replace weak defs in stm32f7xx_hal_i2s.c */
 void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
 {
+	DEBUG_PRINT("\r\nDMA Half callback");
 	if (g_state == STATE_ACQ10)
 	{
 		/* The first half of the buffer is now complete and can be written to USB */
@@ -257,6 +265,7 @@ void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
 
 void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef *hi2s)
 {
+	DEBUG_PRINT("\r\nDMA Full callback");
 	if (g_state == STATE_ACQ31)
 	{
 		/* The second half of the buffer is now complete and can be written to USB */
@@ -275,6 +284,7 @@ void HAL_I2S_ErrorCallback(I2S_HandleTypeDef *hi2s)
 {
 /*	uint32_t errcode;
 	errcode = HAL_I2S_GetError(hi2s);*/
+	DEBUG_PRINT("\r\nI2S Error callback");
 
 	if (g_state == STATE_ACQ10 || g_state == STATE_ACQ21 || g_state == STATE_ACQ31 || g_state == STATE_ACQ12)
 	{

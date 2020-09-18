@@ -116,8 +116,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		HAL_Delay(1000);
-		HAL_UART_Transmit(&huart2, ".", 1, 1000);
+	controller_attempt_upload();
+	HAL_Delay(50);
+//	HAL_UART_Transmit(&huart2, ".", 1, 1000);
 	}
   /* USER CODE END 3 */
 }

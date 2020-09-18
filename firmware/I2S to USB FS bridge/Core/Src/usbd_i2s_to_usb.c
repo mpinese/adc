@@ -212,8 +212,12 @@ __ALIGN_BEGIN static uint8_t USBD_I2S_to_USB_DeviceQualifierDesc[USB_LEN_DEV_QUA
   */
 static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
+	USBD_LL_OpenEP(pdev, I2S_TO_USB_EPIN_ADDR, USBD_EP_TYPE_BULK,
+			USB_FS_MAX_PACKET_SIZE);
+	USBD_LL_OpenEP(pdev, I2S_TO_USB_EPOUT_ADDR, USBD_EP_TYPE_BULK,
+			USB_FS_MAX_PACKET_SIZE);
 
-  return (uint8_t)USBD_OK;
+	return (uint8_t) USBD_OK;
 }
 
 /**
