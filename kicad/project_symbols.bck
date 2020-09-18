@@ -1,17 +1,14 @@
 EESchema-DOCLIB  Version 2.0
 #
 $CMP 1825910-6
-F Compliant
+D SWITCH TACTILE SPST-NO 0.05A 24V
+K 450-1650-ND FSMJ
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English
 $ENDCMP
 #
 $CMP QTX333
 D SMD HCMOS Clock Oscillator 3.4 x 2.7 x 1.2mm
 F https://docs.rs-online.com/555d/0900766b812f2b80.pdf
-$ENDCMP
-#
-$CMP QX7
-D 5x7 SMD HCMOS Clock Oscillator
-F https://docs.rs-online.com/26d2/0900766b812e7649.pdf
 $ENDCMP
 #
 $CMP STM32F730R8

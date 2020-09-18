@@ -1,7 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
 $CMP 1825910-6
-F Compliant
+D SWITCH TACTILE SPST-NO 0.05A 24V
+K 450-1650-ND FSMJ
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English
 $ENDCMP
 #
 $CMP QTX333

@@ -1,0 +1,28 @@
+<QucsStudio Schematic 2.5.7>
+<Properties>
+  <View=0,0,1370,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=i2s_test_generator_qucsstudio.dat>
+  <DataDisplay=i2s_test_generator_qucsstudio.sch>
+  <OpenDisplay=1>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Time 60 550 1270 490 3 #c0c0c0 1 00 1 0 1 29 1 0 1 1 1 0 1 2000 315 0 225 "" "" "">
+	<"CLK.X" #0000ff 0 3 0 0 0 0 "">
+	<"DATA.X" #ff0000 0 3 0 0 0 0 "">
+	<"LRCK.X" #ff00ff 0 3 0 0 0 0 "">
+  </Time>
+</Diagrams>
+<Paintings>
+</Paintings>
