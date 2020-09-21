@@ -11,6 +11,10 @@ D SMD HCMOS Clock Oscillator 3.4 x 2.7 x 1.2mm
 F https://docs.rs-online.com/555d/0900766b812f2b80.pdf
 $ENDCMP
 #
+$CMP SIT2001B
+F https://www.sitime.com/datasheet/SiT2001
+$ENDCMP
+#
 $CMP STM32F730R8
 D Arm Cortex-M7 MCU+FPU, 64KB flash 256KB RAM, 216MHz, 1.7-3.6V, LQFP-64
 K ARM Cortex-M4 STM32F7 STM32F730
