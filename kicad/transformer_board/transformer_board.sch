@@ -603,7 +603,7 @@ F 0 "J3" H 9680 4342 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 9680 4251 50  0000 L CNN
 F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-5.0-H_1x03_P5.00mm_Horizontal" H 9600 4300 50  0001 C CNN
 F 3 "~" H 9600 4300 50  0001 C CNN
-F 4 "" H 9600 4300 50  0001 C CNN "DigiKey"
+F 4 "277-1578-ND" H 9600 4300 50  0001 C CNN "DigiKey"
 	1    9600 4300
 	1    0    0    -1  
 $EndComp
@@ -631,7 +631,7 @@ F 0 "J2" H 9680 2992 50  0000 L CNN
 F 1 "Screw_Terminal_01x02" H 9680 2901 50  0000 L CNN
 F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal" H 9600 2950 50  0001 C CNN
 F 3 "~" H 9600 2950 50  0001 C CNN
-F 4 "" H 9600 2950 50  0001 C CNN "DigiKey"
+F 4 "277-1667-ND" H 9600 2950 50  0001 C CNN "DigiKey"
 	1    9600 2950
 	1    0    0    1   
 $EndComp
