@@ -8,18 +8,7 @@
 #include "i2s_to_usb_controller.h"
 #include "usbd_i2s_to_usb.h"
 
-
-/* CONVENIENCE MACROS */
-/**********************/
-#ifdef DEBUG
-#include <stdio.h>
-#include <string.h>
-char __debug_print_buf[256];
-extern UART_HandleTypeDef huart2;
-#define DEBUG_PRINT(...) { sprintf(&__debug_print_buf[0], __VA_ARGS__); HAL_UART_Transmit(&huart2, (uint8_t*) &__debug_print_buf[0], strlen(__debug_print_buf), 1000); }
-#else
-#define DEBUG_PRINT(...)
-#endif
+#include "debug_funcs.h"
 
 
 /* GLOBALS */
@@ -35,6 +24,7 @@ __ALIGN_BEGIN static uint16_t g_i2s_buffer[I2S_BUFFER_HALFWORDS] __ALIGN_END;
 
 /* I2S input data buffer read position. */
 static uint32_t g_i2s_buffer_pos;
+static uint32_t g_i2s_buffer_write_pos;
 
 /* Sample counter. Stores the 0-based index of the sample that is at g_i2s_buffer_pos */
 static uint32_t g_sample_counter;
@@ -57,16 +47,97 @@ Controller_StatusTypeDef controller_reset()
 }
 
 
+void HAL_I2S_RxHalfCpltCallbackDummy()
+{
+	DEBUG_PRINT("\r\nDMA Half callback");
+	if (g_state == STATE_ACQ10)
+	{
+		/* The first half of the buffer is now complete and can be written to USB */
+		g_state = STATE_ACQ21;
+	}
+	else if (g_state == STATE_ACQ21)
+	{
+		/* Buffer overrun */
+//		HAL_I2S_DMAStop(hi2s);
+		g_state = STATE_BUFOVR;
+	}
+}
+
+void HAL_I2S_RxCpltCallbackDummy()
+{
+	DEBUG_PRINT("\r\nDMA Full callback");
+	if (g_state == STATE_ACQ31)
+	{
+		/* The second half of the buffer is now complete and can be written to USB */
+		g_state = STATE_ACQ12;
+	}
+	else if (g_state == STATE_ACQ12)
+	{
+		/* Buffer overrun */
+//		HAL_I2S_DMAStop(hi2s);
+		g_state = STATE_BUFOVR;
+	}
+}
+
+
+void controller_poll_i2s()
+{
+	uint32_t hwords_to_read;
+	HAL_StatusTypeDef hal_status;
+
+	if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
+		return;
+
+	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
+	{
+		g_state = STATE_BUFOVR;
+		return;
+	}
+
+	hwords_to_read = I2S_BUFFER_HALFWORDS - g_i2s_buffer_write_pos;
+	if (hwords_to_read > 16)
+		hwords_to_read = 16;
+
+	hal_status = HAL_I2S_Receive(&hi2s2, &g_i2s_buffer[g_i2s_buffer_write_pos], hwords_to_read, 100);
+	if (hal_status != HAL_OK)
+	{
+		if (hi2s2.ErrorCode == HAL_I2S_ERROR_TIMEOUT)
+		{
+			DEBUG_PRINT("TO ");
+		}
+		else
+		{
+			DEBUG_PRINT("HS%d-%lu", hal_status, hi2s2.ErrorCode);
+		}
+		return;
+	}
+	DEBUG_PRINT("ROK ");
+
+	g_i2s_buffer_write_pos += hwords_to_read;
+
+	if (g_i2s_buffer_write_pos >= I2S_BUFFER_HALFWORDS/2 && g_i2s_buffer_write_pos - hwords_to_read < I2S_BUFFER_HALFWORDS/2)
+	{
+		HAL_I2S_RxHalfCpltCallbackDummy();
+	}
+
+	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
+	{
+		HAL_I2S_RxCpltCallbackDummy();
+		g_i2s_buffer_write_pos = 0;
+	}
+}
+
+
 Controller_StatusTypeDef controller_attempt_upload()
 {
 	USBD_StatusTypeDef usb_status;
 	uint16_t hwords_to_xfer;
 	uint8_t last_xfer = 0;
 
-	if (g_state != STATE_IDLE)
-	{
-		DEBUG_PRINT("%d\t%lu\t%lu\r\n", g_state, g_i2s_buffer_pos, g_sample_counter);
-	}
+//	if (g_state != STATE_IDLE)
+//	{
+//		DEBUG_PRINT("%d\t%lu\t%lu", g_state, g_i2s_buffer_pos, g_sample_counter);
+//	}
 
 	if (g_state == STATE_ACQ21)
 	{
@@ -190,12 +261,15 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 *    above.
 		 * 2. Set state to STATE_ACQ10
 		 */
-		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
-		if (hal_status != HAL_OK)
-		{
-			DEBUG_PRINT("DMA error\r\n");
-			return CONTROLLER_I2S_DMA_ERROR;
-		}
+//		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
+		g_i2s_buffer_pos = 0;
+//		if (hal_status != HAL_OK)
+//		{
+//			DEBUG_PRINT("DMA error\r\n");
+//			return CONTROLLER_I2S_DMA_ERROR;
+//		}
+		g_i2s_buffer_write_pos = 0;
+
 		g_state = STATE_ACQ10;
 
 		break;
@@ -215,9 +289,9 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * 1. Stop DMA.
 		 * 2. Reset.
 		 */
-		hal_status = HAL_I2S_DMAStop(&hi2s2);
-		if (hal_status != HAL_OK)
-			return CONTROLLER_I2S_DMA_ERROR;
+//		hal_status = HAL_I2S_DMAStop(&hi2s2);
+//		if (hal_status != HAL_OK)
+//			return CONTROLLER_I2S_DMA_ERROR;
 		controller_reset();
 
 		break;
