@@ -40,6 +40,16 @@
 #include "usbd_ctlreq.h"
 #include "i2s_to_usb_controller.h"
 
+#ifdef DEBUG
+#include <stdio.h>
+#include <string.h>
+char __debug_print_buf[256];
+extern UART_HandleTypeDef huart2;
+#define DEBUG_PRINT(...) { sprintf(&__debug_print_buf[0], __VA_ARGS__); HAL_UART_Transmit(&huart2, (uint8_t*) &__debug_print_buf[0], strlen(__debug_print_buf), 1000); }
+#else
+#define DEBUG_PRINT(...)
+#endif
+
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
   * @{
@@ -212,6 +222,7 @@ __ALIGN_BEGIN static uint8_t USBD_I2S_to_USB_DeviceQualifierDesc[USB_LEN_DEV_QUA
   */
 static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
+	DEBUG_PRINT("Init");
 	USBD_LL_OpenEP(pdev, I2S_TO_USB_EPIN_ADDR, USBD_EP_TYPE_BULK,
 			USB_FS_MAX_PACKET_SIZE);
 	USBD_LL_OpenEP(pdev, I2S_TO_USB_EPOUT_ADDR, USBD_EP_TYPE_BULK,
@@ -229,7 +240,7 @@ static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
   */
 static uint8_t USBD_I2S_to_USB_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
-
+	DEBUG_PRINT("Deinit");
   return (uint8_t)USBD_OK;
 }
 
@@ -329,6 +340,7 @@ static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
 	 * at which point the busy flag is cleared. If we do not have to transmit a ZLP, then just clear the
 	 * g_datain_busy flag.
 	 */
+	DEBUG_PRINT("DatIn");
 	if (pdev->ep_in[epnum].total_length > 0
 			&& (pdev->ep_in[epnum].total_length % USB_FS_MAX_PACKET_SIZE) == 0)
 	{
@@ -349,6 +361,7 @@ static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
   */
 //static uint8_t USBD_I2S_to_USB_EP0_RxReady(USBD_HandleTypeDef *pdev)
 //{
+//DEBUG_PRINT("CRXR");
 //
 //  return (uint8_t)USBD_OK;
 //}
@@ -361,6 +374,7 @@ static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
   */
 static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev)
 {
+	DEBUG_PRINT("CTXR");
 
   return (uint8_t)USBD_OK;
 }
@@ -414,6 +428,7 @@ static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length)
 USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length)
 {
 	extern USBD_HandleTypeDef hUsbDeviceFS;
+	DEBUG_PRINT("Xmit");
   if (g_datain_busy)
     return USBD_BUSY;
 

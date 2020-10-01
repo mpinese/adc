@@ -63,7 +63,11 @@ Controller_StatusTypeDef controller_attempt_upload()
 	uint16_t hwords_to_xfer;
 	uint8_t last_xfer = 0;
 
-	DEBUG_PRINT("%d", g_state);
+	if (g_state != STATE_IDLE)
+	{
+		DEBUG_PRINT("%d\t%lu\t%lu\r\n", g_state, g_i2s_buffer_pos, g_sample_counter);
+	}
+
 	if (g_state == STATE_ACQ21)
 	{
 		/* We're reading from the first half of g_i2s_buffer, up to
@@ -134,7 +138,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 	 */
 
 	HAL_StatusTypeDef hal_status;
-	DEBUG_PRINT("Signal = %d\r\n", (bRequest & 0xC0) >> 6)
+//	DEBUG_PRINT("S%d ", (bRequest & 0xC0) >> 6)
 
 	switch ((bRequest & 0xC0) >> 6)
 	{
@@ -143,7 +147,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: Yes (status)
 		 */
-		DEBUG_PRINT("Command received: Report status\r\n")
+		DEBUG_PRINT("Csta ")
 
 		/* Response data packet format: 5 bytes:
 		 * Byte		Contents
@@ -174,7 +178,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Command received: Start acquisition\r\n")
+		DEBUG_PRINT("Csaq ")
 
 		/* This command is only valid from IDLE state */
 		if (g_state != STATE_IDLE)
@@ -189,10 +193,9 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
 		if (hal_status != HAL_OK)
 		{
-			DEBUG_PRINT("\r\nDMA error");
+			DEBUG_PRINT("DMA error\r\n");
 			return CONTROLLER_I2S_DMA_ERROR;
 		}
-		DEBUG_PRINT("\r\nOK");
 		g_state = STATE_ACQ10;
 
 		break;
@@ -202,7 +205,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Command received: Stop acquisition\r\n")
+		DEBUG_PRINT("Chaq ")
 
 		/* This command is only valid from an ACQ state */
 		if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
@@ -224,7 +227,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Command received: Reset\r\n")
+		DEBUG_PRINT("Crst ")
 
 		/* This command is only valid from either IDLE or BUFOVR states */
 		if (g_state != STATE_IDLE && g_state != STATE_BUFOVR)
@@ -234,7 +237,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		controller_reset();
 
 	default:
-		DEBUG_PRINT("Command received: Invalid code (bRequest=%#x, command=%d)\r\n", bRequest, (bRequest & 0xC0) >> 6)
+		DEBUG_PRINT("Cunk%#x-%d ", bRequest, (bRequest & 0xC0) >> 6)
 		return CONTROLLER_UNKNOWN_COMMAND;
 	}
 
