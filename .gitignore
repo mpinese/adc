@@ -4,3 +4,10 @@
 firmware/.metadata
 firmware/I2S to USB FS bridge/Debug
 firmware/I2S to USB FS bridge/Release
+firmware/Serial audio test generator/db/
+firmware/Serial audio test generator/output_files/
+firmware/Serial audio test generator/simulation/
+kicad/transformer_board/fab/
+kicad/usb_bridge/test_i2s_gen_cpld/fab/
+kicad/usb_bridge/test_i2s_gen_discrete/fab/
+firmware/Serial audio test generator/incremental_db/
