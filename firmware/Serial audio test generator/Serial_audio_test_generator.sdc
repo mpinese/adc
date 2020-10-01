@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {in_clk} -period 162.760 -waveform { 0.000 81.380 } [get_ports {in_clk}]
+create_clock -name {iClk} -period 162.760 -waveform { 0.000 81.380 } [get_ports {iClk}]
 
 
 #**************************************************************
@@ -64,16 +64,17 @@ create_clock -name {in_clk} -period 162.760 -waveform { 0.000 81.380 } [get_port
 # Set Input Delay
 #**************************************************************
 
-set_input_delay -add_delay  -clock [get_clocks {in_clk}]  10.000 [get_ports {in_reset}]
+set_input_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {inReset}]
+set_input_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {iEnable}]
 
 
 #**************************************************************
 # Set Output Delay
 #**************************************************************
 
-set_output_delay -add_delay  -clock [get_clocks {in_clk}]  10.000 [get_ports {out_bck}]
-set_output_delay -add_delay  -clock [get_clocks {in_clk}]  10.000 [get_ports {out_data}]
-set_output_delay -add_delay  -clock [get_clocks {in_clk}]  10.000 [get_ports {out_lrck}]
+set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oBCK}]
+set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oData}]
+set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oLRCK}]
 
 
 #**************************************************************

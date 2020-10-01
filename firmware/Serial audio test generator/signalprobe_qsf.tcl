@@ -1,5 +1,3 @@
-# -------------------------------------------------------------------------- #
-#
 # Copyright (C) 2020  Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions 
 # and other software and tools, and any partner logic 
@@ -14,18 +12,19 @@
 # Intel and sold by Intel or its authorized distributors.  Please
 # refer to the applicable agreement for further details, at
 # https://fpgasoftware.intel.com/eula.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus Prime
-# Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-# Date created = 18:56:09  September 21, 2020
-#
-# -------------------------------------------------------------------------- #
 
-QUARTUS_VERSION = "20.1"
-DATE = "18:56:09  September 21, 2020"
 
-# Revisions
+# Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+# File: signalprobe_qsf.tcl
+# Generated on: Tue Sep 22 00:12:36 2020
 
-PROJECT_REVISION = "v1"
+# Note: This file contains a Tcl script generated from the Signal Probe Gui.
+#       You can use this script to restore Signal Probes after deleting the DB
+#       folder; at the command line use "quartus_cdb -t signalprobe_qsf.tcl".
+
+package require ::quartus::chip_planner
+package require ::quartus::project
+project_open v1 -revision v1
+read_netlist
+set had_failure 0
+

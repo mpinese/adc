@@ -57,8 +57,23 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STI
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_location_assignment PIN_7 -to iClk
+set_location_assignment PIN_5 -to iEnable
+set_location_assignment PIN_53 -to oBCK
+set_location_assignment PIN_51 -to oData
+set_location_assignment PIN_52 -to oLRCK
+set_location_assignment PIN_4 -to inReset
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_global_assignment -name VHDL_FILE prng_lfsr5_9_11.vhd
+set_global_assignment -name VHDL_FILE prng_lfsr5_7_9_11.vhd
+set_global_assignment -name VHDL_FILE prng_lfsr15.vhd
 set_global_assignment -name SDC_FILE Serial_audio_test_generator.sdc
 set_global_assignment -name VHDL_FILE prng_lfsr_tb.vhd
 set_global_assignment -name VHDL_FILE gen_audio_tb.vhd
-set_global_assignment -name VHDL_FILE prng_lfsr.vhd
 set_global_assignment -name VHDL_FILE gen_audio.vhd

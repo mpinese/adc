@@ -7,7 +7,7 @@ end gen_audio_tb;
 
 architecture behav of gen_audio_tb is
 	constant ncycles : integer := 1000;
-	constant period : time := 162.7 ns;
+	constant period : time := 81.38 ns;		-- 12.288 MHz external oscillator
 
 	signal clock : std_ulogic;		-- clock to DUT
 	signal nReset : std_ulogic;	-- reset to DUT
