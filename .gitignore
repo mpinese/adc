@@ -11,3 +11,4 @@ kicad/transformer_board/fab/
 kicad/usb_bridge/test_i2s_gen_cpld/fab/
 kicad/usb_bridge/test_i2s_gen_discrete/fab/
 firmware/Serial audio test generator/incremental_db/
+fp-info-cache
