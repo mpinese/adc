@@ -50,30 +50,30 @@ Controller_StatusTypeDef controller_reset()
 
 void HAL_I2S_RxHalfCpltCallbackDummy()
 {
-	DEBUG_PRINT("\r\nDMA Half callback");
 	if (g_state == STATE_ACQ10)
 	{
 		/* The first half of the buffer is now complete and can be written to USB */
 		g_state = STATE_ACQ21;
 	}
-	else if (g_state == STATE_ACQ21)
+	else if (g_state == STATE_ACQ12)
 	{
 		/* Buffer overrun */
+		DEBUG_PRINT("\r\nBUFFER OVERRUN");
 		g_state = STATE_BUFOVR;
 	}
 }
 
 void HAL_I2S_RxCpltCallbackDummy()
 {
-	DEBUG_PRINT("\r\nDMA Full callback");
 	if (g_state == STATE_ACQ31)
 	{
 		/* The second half of the buffer is now complete and can be written to USB */
 		g_state = STATE_ACQ12;
 	}
-	else if (g_state == STATE_ACQ12)
+	else if (g_state == STATE_ACQ21)
 	{
 		/* Buffer overrun */
+		DEBUG_PRINT("\r\nBUFFER OVERRUN");
 		g_state = STATE_BUFOVR;
 	}
 }
@@ -81,48 +81,44 @@ void HAL_I2S_RxCpltCallbackDummy()
 
 Controller_StatusTypeDef controller_poll_i2s()
 {
-	uint32_t hwords_to_read;
+	uint32_t words_to_read;
 	HAL_StatusTypeDef hal_status;
 
 	if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
 		return CONTROLLER_OK;
 
-	DEBUG_PRINT("%d ", g_state);
-
 	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
 	{
 		g_state = STATE_BUFOVR;
-		return CONTROLLER_OK;
+		return CONTROLLER_BUFFER_OVERRUN;
 	}
 
-	hwords_to_read = I2S_BUFFER_HALFWORDS - g_i2s_buffer_write_pos;
-	if (hwords_to_read > 16)
-		hwords_to_read = 16;
+	words_to_read = (I2S_BUFFER_HALFWORDS - g_i2s_buffer_write_pos)/2;
+	if (words_to_read > 32)
+		words_to_read = 32;
 
-	hal_status = HAL_I2S_Receive(&hi2s2, &g_i2s_buffer[g_i2s_buffer_write_pos], hwords_to_read, 100);
+	DEBUG_PRINT("\r\n  PollS: %d %lu %lu %lu %lu %lu", g_state, g_sample_counter, g_i2s_buffer_pos, g_i2s_buffer_write_pos, I2S_BUFFER_HALFWORDS, words_to_read);
+
+	hal_status = HAL_I2S_Receive(&hi2s2, &g_i2s_buffer[g_i2s_buffer_write_pos], words_to_read, 100);
 	if (hal_status != HAL_OK)
 	{
 		if (hi2s2.ErrorCode == HAL_I2S_ERROR_TIMEOUT)
-		{
-			DEBUG_PRINT("TO ");
-		}
+			return CONTROLLER_I2S_TIMEOUT;
 		else
-		{
-			DEBUG_PRINT("HS%d-%lu", hal_status, hi2s2.ErrorCode);
-		}
-		return;
+			return CONTROLLER_I2S_ERROR;
 	}
-	DEBUG_PRINT("ROK ");
 
-	g_i2s_buffer_write_pos += hwords_to_read;
+	g_i2s_buffer_write_pos += words_to_read*2;
 
-	if (g_i2s_buffer_write_pos >= I2S_BUFFER_HALFWORDS/2 && g_i2s_buffer_write_pos - hwords_to_read < I2S_BUFFER_HALFWORDS/2)
+	if (g_i2s_buffer_write_pos >= I2S_BUFFER_HALFWORDS/2 && g_i2s_buffer_write_pos - words_to_read*2 < I2S_BUFFER_HALFWORDS/2)
 	{
+		DEBUG_PRINT("\r\n  PollS: half");
 		HAL_I2S_RxHalfCpltCallbackDummy();
 	}
 
 	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
 	{
+		DEBUG_PRINT("\r\n  PollS: full");
 		HAL_I2S_RxCpltCallbackDummy();
 		g_i2s_buffer_write_pos = 0;
 	}
@@ -169,9 +165,8 @@ Controller_StatusTypeDef controller_attempt_upload()
 	else
 		last_xfer = 1;
 
-	DEBUG_PRINT("\r\nCalling USB transmit");
-	usb_status = USBD_I2S_to_USB_Transmit((uint8_t*) g_i2s_buffer[g_i2s_buffer_pos], hwords_to_xfer*2);
-	DEBUG_PRINT("\r\nReturned status %d", usb_status);
+	usb_status = USBD_I2S_to_USB_Transmit((uint8_t*) &g_i2s_buffer[g_i2s_buffer_pos], hwords_to_xfer*2);
+	DEBUG_PRINT("\r\n  USBUp:xmit %d", usb_status);
 	if (usb_status == USBD_BUSY)
 		return CONTROLLER_USB_BUSY;
 	else if (usb_status != USBD_OK)
@@ -221,7 +216,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: Yes (status)
 		 */
-		DEBUG_PRINT("Csta ")
+		DEBUG_PRINT("\r\nCsta")
 
 		/* Response data packet format: 5 bytes:
 		 * Byte		Contents
@@ -252,7 +247,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Csaq ")
+		DEBUG_PRINT("\r\nCsaq")
 
 		/* This command is only valid from IDLE state */
 		if (g_state != STATE_IDLE)
@@ -282,7 +277,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Chaq ")
+		DEBUG_PRINT("\r\nChaq")
 
 		/* This command is only valid from an ACQ state */
 		if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
@@ -304,7 +299,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * Request data: None
 		 * Data packet follows: No
 		 */
-		DEBUG_PRINT("Crst ")
+		DEBUG_PRINT("\r\nCrst")
 
 		/* This command is only valid from either IDLE or BUFOVR states */
 		if (g_state != STATE_IDLE && g_state != STATE_BUFOVR)
@@ -314,7 +309,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		controller_reset();
 
 	default:
-		DEBUG_PRINT("Cunk%#x-%d ", bRequest, (bRequest & 0xC0) >> 6)
+		DEBUG_PRINT("\r\nCunk%#x-%d ", bRequest, (bRequest & 0xC0) >> 6)
 		return CONTROLLER_UNKNOWN_COMMAND;
 	}
 
@@ -334,7 +329,7 @@ void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
 		/* The first half of the buffer is now complete and can be written to USB */
 		g_state = STATE_ACQ21;
 	}
-	else if (g_state == STATE_ACQ21)
+	else if (g_state == STATE_ACQ12)
 	{
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);
@@ -351,7 +346,7 @@ void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef *hi2s)
 		/* The second half of the buffer is now complete and can be written to USB */
 		g_state = STATE_ACQ12;
 	}
-	else if (g_state == STATE_ACQ12)
+	else if (g_state == STATE_ACQ21)
 	{
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);

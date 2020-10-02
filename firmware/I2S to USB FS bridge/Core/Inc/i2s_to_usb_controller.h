@@ -10,7 +10,8 @@
 
 #include "stm32f7xx_hal.h"
 
-#define I2S_BUFFER_HALFWORDS	65534	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
+//#define I2S_BUFFER_HALFWORDS	65534	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
+#define I2S_BUFFER_HALFWORDS	8192	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
 #define MAX_USB_XFERSIZE		1536	/* In half words. The IN endpoint FIFO is currently set to 768 words. */
 
 typedef enum
@@ -20,7 +21,10 @@ typedef enum
 	CONTROLLER_INVALID_COMMAND	= 0x02U,
 	CONTROLLER_I2S_DMA_ERROR	= 0x03U,
 	CONTROLLER_USB_BUSY			= 0x04U,
-	CONTROLLER_USB_ERROR		= 0x05U
+	CONTROLLER_USB_ERROR		= 0x05U,
+	CONTROLLER_BUFFER_OVERRUN	= 0x06U,
+	CONTROLLER_I2S_TIMEOUT		= 0x07U,
+	CONTROLLER_I2S_ERROR		= 0x08U
 } Controller_StatusTypeDef;
 
 

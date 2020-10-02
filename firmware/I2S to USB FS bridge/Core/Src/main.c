@@ -112,13 +112,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	Controller_StatusTypeDef status;
 	while (1)
 	{
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	controller_poll_i2s();
-	controller_attempt_upload();
+	status = controller_poll_i2s();
+	if (status != CONTROLLER_OK)
+		DEBUG_PRINT("\r\nPollS:%d", status);
+	status = controller_attempt_upload();
+	if (status != CONTROLLER_OK)
+		DEBUG_PRINT("\r\nUSBUp:%d", status);
 //	HAL_Delay(50);
 //	HAL_UART_Transmit(&huart2, ".", 1, 1000);
 	}
