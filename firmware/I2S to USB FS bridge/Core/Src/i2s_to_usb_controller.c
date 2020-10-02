@@ -41,6 +41,7 @@ extern I2S_HandleTypeDef hi2s2;
 Controller_StatusTypeDef controller_reset()
 {
 	g_state = STATE_IDLE;
+	g_i2s_buffer_write_pos = 0;
 	g_i2s_buffer_pos = 0;
 	g_sample_counter = 0;
 	return CONTROLLER_OK;
@@ -58,7 +59,6 @@ void HAL_I2S_RxHalfCpltCallbackDummy()
 	else if (g_state == STATE_ACQ21)
 	{
 		/* Buffer overrun */
-//		HAL_I2S_DMAStop(hi2s);
 		g_state = STATE_BUFOVR;
 	}
 }
@@ -74,24 +74,25 @@ void HAL_I2S_RxCpltCallbackDummy()
 	else if (g_state == STATE_ACQ12)
 	{
 		/* Buffer overrun */
-//		HAL_I2S_DMAStop(hi2s);
 		g_state = STATE_BUFOVR;
 	}
 }
 
 
-void controller_poll_i2s()
+Controller_StatusTypeDef controller_poll_i2s()
 {
 	uint32_t hwords_to_read;
 	HAL_StatusTypeDef hal_status;
 
 	if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
-		return;
+		return CONTROLLER_OK;
+
+	DEBUG_PRINT("%d ", g_state);
 
 	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
 	{
 		g_state = STATE_BUFOVR;
-		return;
+		return CONTROLLER_OK;
 	}
 
 	hwords_to_read = I2S_BUFFER_HALFWORDS - g_i2s_buffer_write_pos;
@@ -125,6 +126,8 @@ void controller_poll_i2s()
 		HAL_I2S_RxCpltCallbackDummy();
 		g_i2s_buffer_write_pos = 0;
 	}
+
+	return CONTROLLER_OK;
 }
 
 

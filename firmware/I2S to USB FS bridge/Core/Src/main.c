@@ -105,11 +105,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-//	USBD_Init(&hUsbDeviceFS, &I2S_to_USB_Desc, 0);
-//	USBD_RegisterClass(&hUsbDeviceFS, &USBD_I2S_to_USB_ClassDriver);
-//	USBD_Start(&hUsbDeviceFS);
-	HAL_StatusTypeDef hal_status;
-	uint8_t buf[8];
+	USBD_Init(&hUsbDeviceFS, &I2S_to_USB_Desc, 0);
+	USBD_RegisterClass(&hUsbDeviceFS, &USBD_I2S_to_USB_ClassDriver);
+	USBD_Start(&hUsbDeviceFS);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -119,10 +117,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	hal_status = HAL_I2S_Receive(&hi2s2, &buf[0], 4, 100);
-	DEBUG_PRINT("HS%d-%lu", hal_status, hi2s2.ErrorCode);
-		//	controller_poll_i2s();
-//	controller_attempt_upload();
+	controller_poll_i2s();
+	controller_attempt_upload();
 //	HAL_Delay(50);
 //	HAL_UART_Transmit(&huart2, ".", 1, 1000);
 	}

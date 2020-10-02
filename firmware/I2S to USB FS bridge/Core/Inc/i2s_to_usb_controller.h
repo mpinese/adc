@@ -67,6 +67,7 @@ typedef enum
 } Controller_State;
 
 Controller_StatusTypeDef controller_reset();
+Controller_StatusTypeDef controller_poll_i2s();
 Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		uint16_t wValue, uint16_t wIndex, uint16_t wLength, uint8_t *databuf,
 		uint16_t databuf_len);
