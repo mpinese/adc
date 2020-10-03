@@ -11,8 +11,9 @@
 #include "stm32f7xx_hal.h"
 
 //#define I2S_BUFFER_HALFWORDS	65534	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
-#define I2S_BUFFER_HALFWORDS	8192	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
-#define MAX_USB_XFERSIZE		1536	/* In half words. The IN endpoint FIFO is currently set to 768 words. */
+#define I2S_BUFFER_HALFWORDS	8192U	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
+//#define MAX_USB_XFERSIZE		1536	/* In half words. The IN endpoint FIFO is currently set to 768 words. */
+#define MAX_USB_XFERSIZE		32		/* In half words. The IN endpoint FIFO is currently set to 768 words. */
 
 typedef enum
 {

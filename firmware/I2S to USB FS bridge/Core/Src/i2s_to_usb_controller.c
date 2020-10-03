@@ -106,7 +106,7 @@ Controller_StatusTypeDef controller_poll_i2s()
 	if (words_to_read > 32)
 		words_to_read = 32;
 
-	DEBUG_PRINT("\r\n  PollS: %d %lu %lu %lu %lu %lu", g_state, g_sample_counter, g_i2s_buffer_pos, g_i2s_buffer_write_pos, I2S_BUFFER_HALFWORDS, words_to_read);
+	DEBUG_PRINT("\r\n  PollS: %d %lu %lu %lu %u %lu", g_state, g_sample_counter, g_i2s_buffer_pos, g_i2s_buffer_write_pos, I2S_BUFFER_HALFWORDS, words_to_read);
 
 	hal_status = HAL_I2S_Receive(&hi2s2, &g_i2s_buffer[g_i2s_buffer_write_pos], words_to_read, 100);
 	if (hal_status != HAL_OK)
@@ -177,15 +177,15 @@ Controller_StatusTypeDef controller_attempt_upload()
 	usb_status = USBD_I2S_to_USB_Transmit((uint8_t*) &g_i2s_buffer[g_i2s_buffer_pos], hwords_to_xfer*2);
 	if (usb_status == USBD_BUSY)
 	{
-		DEBUG_PRINT("\r\n  USBUp:xmit BUSY", usb_status);
+		DEBUG_PRINT("\r\n  USBUp:xmit BUSY");
 		return CONTROLLER_USB_BUSY;
 	}
 	else if (usb_status != USBD_OK)
 	{
-		DEBUG_PRINT("\r\n  USBUp:xmit ERROR", usb_status);
+		DEBUG_PRINT("\r\n  USBUp:xmit ERROR");
 		return CONTROLLER_USB_ERROR;
 	}
-	DEBUG_PRINT("\r\n  USBUp:xmit OK", usb_status);
+	DEBUG_PRINT("\r\n  USBUp:xmit OK");
 
 	/* Update the buffer position */
 	g_i2s_buffer_pos += hwords_to_xfer;
@@ -275,14 +275,14 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * 2. Set state to STATE_ACQ10
 		 */
 		__HAL_I2S_CLEAR_OVRFLAG(&hi2s2);
-//		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
 		g_i2s_buffer_pos = 0;
-//		if (hal_status != HAL_OK)
-//		{
-//			DEBUG_PRINT("DMA error\r\n");
-//			return CONTROLLER_I2S_DMA_ERROR;
-//		}
-		g_i2s_buffer_write_pos = 0;
+		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
+		if (hal_status != HAL_OK)
+		{
+			DEBUG_PRINT("\r\nDMA error");
+			return CONTROLLER_I2S_DMA_ERROR;
+		}
+		DEBUG_PRINT("\r\nDMA set");
 
 		g_state = STATE_ACQ10;
 
@@ -303,9 +303,9 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * 1. Stop DMA.
 		 * 2. Reset.
 		 */
-//		hal_status = HAL_I2S_DMAStop(&hi2s2);
-//		if (hal_status != HAL_OK)
-//			return CONTROLLER_I2S_DMA_ERROR;
+		hal_status = HAL_I2S_DMAStop(&hi2s2);
+		if (hal_status != HAL_OK)
+			return CONTROLLER_I2S_DMA_ERROR;
 		controller_reset();
 
 		break;
@@ -350,6 +350,7 @@ void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);
 		g_state = STATE_OVERRUN;
+		DEBUG_PRINT("\r\nBUFFER OVERRUN");
 	}
 }
 
@@ -367,6 +368,7 @@ void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef *hi2s)
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);
 		g_state = STATE_OVERRUN;
+		DEBUG_PRINT("\r\nBUFFER OVERRUN");
 	}
 }
 
@@ -381,5 +383,6 @@ void HAL_I2S_ErrorCallback(I2S_HandleTypeDef *hi2s)
 	{
 		HAL_I2S_DMAStop(hi2s);
 		g_state = STATE_OVERRUN;
+		DEBUG_PRINT("\r\nBUFFER OVERRUN");
 	}
 }
