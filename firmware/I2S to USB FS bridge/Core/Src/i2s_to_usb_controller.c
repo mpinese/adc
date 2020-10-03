@@ -166,11 +166,17 @@ Controller_StatusTypeDef controller_attempt_upload()
 		last_xfer = 1;
 
 	usb_status = USBD_I2S_to_USB_Transmit((uint8_t*) &g_i2s_buffer[g_i2s_buffer_pos], hwords_to_xfer*2);
-	DEBUG_PRINT("\r\n  USBUp:xmit %d", usb_status);
 	if (usb_status == USBD_BUSY)
+	{
+		DEBUG_PRINT("\r\n  USBUp:xmit BUSY", usb_status);
 		return CONTROLLER_USB_BUSY;
+	}
 	else if (usb_status != USBD_OK)
+	{
+		DEBUG_PRINT("\r\n  USBUp:xmit ERROR", usb_status);
 		return CONTROLLER_USB_ERROR;
+	}
+	DEBUG_PRINT("\r\n  USBUp:xmit OK", usb_status);
 
 	/* Update the buffer position */
 	g_i2s_buffer_pos += hwords_to_xfer;

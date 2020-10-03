@@ -12,3 +12,10 @@ kicad/usb_bridge/test_i2s_gen_cpld/fab/
 kicad/usb_bridge/test_i2s_gen_discrete/fab/
 firmware/Serial audio test generator/incremental_db/
 fp-info-cache
+software/spectrum_analyser/libusb-1.0.23/
+software/spectrum_analyser/i2s_reader/i2s_reader/Debug/
+software/spectrum_analyser/i2s_test/Debug/
+software/spectrum_analyser/i2s_test/x64/Debug/i2s_test.exe.recipe
+software/spectrum_analyser/i2s_test/x64/Debug/
+software/spectrum_analyser/.vs/spectrum_analyser/v16/Browse.VC.db
+software/spectrum_analyser/.vs/

@@ -119,11 +119,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	status = controller_poll_i2s();
-	if (status != CONTROLLER_OK)
-		DEBUG_PRINT("\r\nPollS:%d", status);
 	status = controller_attempt_upload();
-	if (status != CONTROLLER_OK)
-		DEBUG_PRINT("\r\nUSBUp:%d", status);
 //	HAL_Delay(50);
 //	HAL_UART_Transmit(&huart2, ".", 1, 1000);
 	}
