@@ -105,13 +105,14 @@ int main()
 
 	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
 
-	unsigned char buf[128];
+	unsigned char buf[512];
 	int n_bytes_received;
 
 	for (int i = 0; i < 100; i++)
 	{
 		libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[0], sizeof(buf), &n_bytes_received, 1000);
-		//		printf("\n%d %d ", libusb_status, n_bytes_received);
+		if (libusb_status < 0)
+			break;
 		for (int j = 0; j < sizeof(buf) / 8; j++)
 		{
 			printf("\n%d %d ", libusb_status, n_bytes_received);
@@ -120,6 +121,7 @@ int main()
 			for (int k = 4; k < 8; printf("%02X", buf[j * 8 + k++]));
 		}
 	}
+	printf("\n%d %d ", libusb_status, n_bytes_received);
 
 	libusb_status = libusb_release_interface(bridge_handle, 0);
 	printf("\n%d %s %s", libusb_status, libusb_error_name(libusb_status), libusb_strerror(libusb_error(libusb_status)));
