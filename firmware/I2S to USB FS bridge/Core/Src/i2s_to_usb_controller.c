@@ -44,6 +44,7 @@ Controller_StatusTypeDef controller_reset()
 	g_i2s_buffer_write_pos = 0;
 	g_i2s_buffer_pos = 0;
 	g_sample_counter = 0;
+	__HAL_I2S_CLEAR_OVRFLAG(&hi2s2);
 	return CONTROLLER_OK;
 }
 
@@ -59,7 +60,7 @@ void HAL_I2S_RxHalfCpltCallbackDummy()
 	{
 		/* Buffer overrun */
 		DEBUG_PRINT("\r\nBUFFER OVERRUN");
-		g_state = STATE_BUFOVR;
+		g_state = STATE_OVERRUN;
 	}
 }
 
@@ -74,7 +75,7 @@ void HAL_I2S_RxCpltCallbackDummy()
 	{
 		/* Buffer overrun */
 		DEBUG_PRINT("\r\nBUFFER OVERRUN");
-		g_state = STATE_BUFOVR;
+		g_state = STATE_OVERRUN;
 	}
 }
 
@@ -87,9 +88,17 @@ Controller_StatusTypeDef controller_poll_i2s()
 	if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
 		return CONTROLLER_OK;
 
+	if (__HAL_I2S_GET_FLAG(&hi2s2, I2S_FLAG_OVR))
+	{
+		DEBUG_PRINT("\r\n======== HAL BUFFER OVERRUN ========");
+		g_state = STATE_OVERRUN;
+		return CONTROLLER_I2S_OVERRUN;
+	}
+
 	if (g_i2s_buffer_write_pos == I2S_BUFFER_HALFWORDS)
 	{
-		g_state = STATE_BUFOVR;
+		DEBUG_PRINT("\r\n======== RAM BUFFER OVERRUN ========");
+		g_state = STATE_OVERRUN;
 		return CONTROLLER_BUFFER_OVERRUN;
 	}
 
@@ -237,7 +246,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 * the response (5 bytes).
 		 */
 		if (databuf_len != 5)
-			return CONTROLLER_INVALID_COMMAND;
+			return CONTROLLER_COMMAND_INVALID;
 
 		/* Fill the data buffer and return */
 		databuf[0] = (uint8_t) g_state;
@@ -257,7 +266,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 
 		/* This command is only valid from IDLE state */
 		if (g_state != STATE_IDLE)
-			return CONTROLLER_INVALID_COMMAND;
+			return CONTROLLER_COMMAND_INVALID;
 
 		/* Steps:
 		 * 1. Set up circular DMA request from I2S to g_i2s_buffer, with half and full interrupts
@@ -265,6 +274,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		 *    above.
 		 * 2. Set state to STATE_ACQ10
 		 */
+		__HAL_I2S_CLEAR_OVRFLAG(&hi2s2);
 //		hal_status = HAL_I2S_Receive_DMA(&hi2s2, &g_i2s_buffer[0], I2S_BUFFER_HALFWORDS);
 		g_i2s_buffer_pos = 0;
 //		if (hal_status != HAL_OK)
@@ -287,7 +297,7 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 
 		/* This command is only valid from an ACQ state */
 		if (g_state != STATE_ACQ10 && g_state != STATE_ACQ21 && g_state != STATE_ACQ31 && g_state != STATE_ACQ12)
-			return CONTROLLER_INVALID_COMMAND;
+			return CONTROLLER_COMMAND_INVALID;
 
 		/* Steps:
 		 * 1. Stop DMA.
@@ -308,15 +318,15 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 		DEBUG_PRINT("\r\nCrst")
 
 		/* This command is only valid from either IDLE or BUFOVR states */
-		if (g_state != STATE_IDLE && g_state != STATE_BUFOVR)
-			return CONTROLLER_INVALID_COMMAND;
+		if (g_state != STATE_IDLE && g_state != STATE_OVERRUN)
+			return CONTROLLER_COMMAND_INVALID;
 		break;
 
 		controller_reset();
 
 	default:
 		DEBUG_PRINT("\r\nCunk%#x-%d ", bRequest, (bRequest & 0xC0) >> 6)
-		return CONTROLLER_UNKNOWN_COMMAND;
+		return CONTROLLER_COMMAND_UNKNOWN;
 	}
 
 	return CONTROLLER_OK;
@@ -339,7 +349,7 @@ void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
 	{
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);
-		g_state = STATE_BUFOVR;
+		g_state = STATE_OVERRUN;
 	}
 }
 
@@ -356,7 +366,7 @@ void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef *hi2s)
 	{
 		/* Buffer overrun */
 		HAL_I2S_DMAStop(hi2s);
-		g_state = STATE_BUFOVR;
+		g_state = STATE_OVERRUN;
 	}
 }
 
@@ -370,6 +380,6 @@ void HAL_I2S_ErrorCallback(I2S_HandleTypeDef *hi2s)
 	if (g_state == STATE_ACQ10 || g_state == STATE_ACQ21 || g_state == STATE_ACQ31 || g_state == STATE_ACQ12)
 	{
 		HAL_I2S_DMAStop(hi2s);
-		g_state = STATE_BUFOVR;
+		g_state = STATE_OVERRUN;
 	}
 }
