@@ -19,3 +19,8 @@ software/spectrum_analyser/i2s_test/x64/Debug/i2s_test.exe.recipe
 software/spectrum_analyser/i2s_test/x64/Debug/
 software/spectrum_analyser/.vs/spectrum_analyser/v16/Browse.VC.db
 software/spectrum_analyser/.vs/
+firmware/Serial audio test generators/db/
+firmware/Serial audio test generators/incremental_db/README
+firmware/Serial audio test generators/incremental_db/compiled_partitions/
+firmware/Serial audio test generators/output_files/
+firmware/Serial audio test generators/simulation/

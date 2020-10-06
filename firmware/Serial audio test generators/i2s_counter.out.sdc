@@ -1,4 +1,4 @@
-## Generated SDC file "Serial_audio_test_generator.sdc"
+## Generated SDC file "i2s_counter.out.sdc"
 
 ## Copyright (C) 2020  Intel Corporation. All rights reserved.
 ## Your use of Intel Corporation's design tools, logic functions 
@@ -20,10 +20,10 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
-## DATE    "Sun Sep 20 23:59:56 2020"
+## DATE    "Tue Oct 06 09:52:46 2020"
 
 ##
-## DEVICE  "5M40ZE64C5"
+## DEVICE  "5M80ZE64C5"
 ##
 
 
@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {iClk} -period 162.760 -waveform { 0.000 81.380 } [get_ports {iClk}]
+create_clock -name {iCLK} -period 81.380 -waveform { 40.690 81.380 } 
 
 
 #**************************************************************
@@ -64,17 +64,12 @@ create_clock -name {iClk} -period 162.760 -waveform { 0.000 81.380 } [get_ports 
 # Set Input Delay
 #**************************************************************
 
-set_input_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {inReset}]
-set_input_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {iEnable}]
 
 
 #**************************************************************
 # Set Output Delay
 #**************************************************************
 
-set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oBCK}]
-set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oData}]
-set_output_delay -add_delay  -clock [get_clocks {iClk}]  10.000 [get_ports {oLRCK}]
 
 
 #**************************************************************
