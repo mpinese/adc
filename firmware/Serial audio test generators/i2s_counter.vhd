@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 
 entity i2s_counter is
 	generic (
-		gBits : natural := 10
+		gBits : natural := 24
 	);
 
 	port (
@@ -43,22 +43,18 @@ begin
 				sClockDiv <= not sClockDiv;
 				if sClockDiv = '1' then
 					if sResetDelayDone = '1' then
-						if sBitCounter = 31 then
-							sSreg <= std_ulogic_vector(to_unsigned(sCounter, gBits));
-							sWS <= not sWS;
-						else
+						if sBitCounter < 32 - gBits then
+							sSD <= '0';
 							if sBitCounter = 0 then
 								sCounter <= (sCounter + 1) mod (2**gBits);
 							end if;
-							if sBitCounter >= 32 - gBits then
-								sSreg <= sSreg(sSreg'high - 1 downto sSreg'low) & '0';
-							end if;
-						end if;
-						
-						if sBitCounter < 32 - gBits then
-							sSD <= '0';
 						else
 							sSD <= sSreg(sSreg'high);
+							sSreg <= sSreg(sSreg'high - 1 downto sSreg'low) & '0';
+							if sBitCounter = 31 then
+								sSreg <= std_ulogic_vector(to_unsigned(sCounter, gBits));
+								sWS <= not sWS;
+							end if;
 						end if;
 					end if;
 				sBitCounter <= (sBitCounter + 1) mod 32;
