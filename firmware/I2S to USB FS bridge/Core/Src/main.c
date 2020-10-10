@@ -113,16 +113,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	Controller_StatusTypeDef status;
 	while (1)
 	{
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	//status = controller_poll_i2s();
-	status = controller_attempt_upload();
-//	HAL_Delay(50);
-//	HAL_UART_Transmit(&huart2, ".", 1, 1000);
+	controller_attempt_upload();
 	}
   /* USER CODE END 3 */
 }
@@ -210,8 +206,8 @@ static void MX_I2S2_Init(void)
   hi2s2.Init.Standard = I2S_STANDARD_PHILIPS;
   hi2s2.Init.DataFormat = I2S_DATAFORMAT_24B;
   hi2s2.Init.MCLKOutput = I2S_MCLKOUTPUT_DISABLE;
-  hi2s2.Init.AudioFreq = 88200;
-  hi2s2.Init.CPOL = I2S_CPOL_LOW;
+  hi2s2.Init.AudioFreq = I2S_AUDIOFREQ_96K;
+  hi2s2.Init.CPOL = I2S_CPOL_HIGH;
   hi2s2.Init.ClockSource = I2S_CLOCK_PLL;
   if (HAL_I2S_Init(&hi2s2) != HAL_OK)
   {

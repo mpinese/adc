@@ -98,30 +98,33 @@ int main()
 	libusb_status = libusb_claim_interface(bridge_handle, 0);
 	printf("\n%d %s %s", libusb_status, libusb_error_name(libusb_status), libusb_strerror(libusb_error(libusb_status)));
 
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x00, 0, 0, NULL, 0, 1000);
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0xC0, 0, 0, NULL, 0, 1000);
+	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x00, 0, 0, NULL, 0, 1000);
+	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
+	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
+	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0xC0, 0, 0, NULL, 0, 1000);
 
 	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
 
-	unsigned char buf[512];
-	int n_bytes_received;
+	unsigned char buf[3*2000];
+	int n_bytes_received, n_bytes_written;
 
-	for (int i = 0; i < 100; i++)
+	n_bytes_written = 0;
+	while (n_bytes_written < sizeof(buf))
 	{
-		libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[0], sizeof(buf), &n_bytes_received, 1000);
+		libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[n_bytes_written], sizeof(buf) - n_bytes_written, &n_bytes_received, 1000);
 		if (libusb_status < 0)
 			break;
-		for (int j = 0; j < sizeof(buf) / 8; j++)
-		{
-			printf("\n%d %d ", libusb_status, n_bytes_received);
-			for (int k = 0; k < 4; printf("%02X", buf[j * 8 + k++]));
-			printf(" ");
-			for (int k = 4; k < 8; printf("%02X", buf[j * 8 + k++]));
-		}
+		n_bytes_written += n_bytes_received;
 	}
-	printf("\n%d %d ", libusb_status, n_bytes_received);
+	printf("\n%d %d ", libusb_status, n_bytes_written);
+
+	for (int j = 0; j < sizeof(buf) / 3; j++)
+	{
+		printf("\n");
+		for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++]));
+	}
+
+	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
 
 	libusb_status = libusb_release_interface(bridge_handle, 0);
 	printf("\n%d %s %s", libusb_status, libusb_error_name(libusb_status), libusb_strerror(libusb_error(libusb_status)));

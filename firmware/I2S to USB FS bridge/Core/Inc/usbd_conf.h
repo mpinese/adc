@@ -48,10 +48,7 @@ extern "C" {
 #define USBD_MAX_NUM_CONFIGURATION             1U
 #define USBD_MAX_STR_DESC_SIZ                  0x100U
 #define USBD_SELF_POWERED                      1U
-#define USBD_DEBUG_LEVEL                       2U
-
-/* CDC Class Config */
-#define USBD_CDC_INTERVAL                      2000U
+#define USBD_DEBUG_LEVEL                       0U
 
 /** @defgroup USBD_Exported_Macros
  * @{

@@ -10,10 +10,8 @@
 
 #include "stm32f7xx_hal.h"
 
-//#define I2S_BUFFER_HALFWORDS	65534	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
-#define I2S_BUFFER_HALFWORDS	8192U	/* Maximum allowable value (a HAL limitation; must fit within uint16_t */
-//#define MAX_USB_XFERSIZE		1536	/* In half words. The IN endpoint FIFO is currently set to 768 words. */
-#define MAX_USB_XFERSIZE		32		/* In half words. The IN endpoint FIFO is currently set to 768 words. */
+#define I2S_BUFFER_WORDS		10000U	/* Maximum allowable value is 65535 (a HAL limitation; must fit within uint16_t */
+#define MAX_USB_XFERSIZE		1024	/* In bytes. The IN endpoint FIFO is currently set to 264 words. */
 
 typedef enum
 {
@@ -46,9 +44,9 @@ typedef enum
  * Source	Dest		Condition														Location
  * 0-Idle	1-ACQ10		USB command: start acquisition									controller_handle_usb_command
  * 1-ACQ10	2-ACQ21		Interrupt: DMA half full										HAL_I2S_RxHalfCpltCallback
- * 2-ACQ21	3-ACQ31		g_i2s_buffer_pos = I2S_BUFFER_HALFWORDS / 2
+ * 2-ACQ21	3-ACQ31		g_i2s_buffer_pos = I2S_BUFFER_WORDS / 2							controller_attempt_upload
  * 3-ACQ31	4-ACQ12		Interrupt: DMA full												HAL_I2S_RxCpltCallback
- * 4-ACQ12	1-ACQ10		g_i2s_buffer_pos = 0 (rolled over from I2S_BUFFER_HALFWORDS)
+ * 4-ACQ12	1-ACQ10		g_i2s_buffer_pos = 0 (rolled over from I2S_BUFFER_WORDS)		controller_attempt_upload
  * 1-ACQ10	0-Idle		USB command: stop acquisition									controller_handle_usb_command
  * 2-ACQ21	0-Idle		USB command: stop acquisition									controller_handle_usb_command
  * 3-ACQ31	0-Idle		USB command: stop acquisition									controller_handle_usb_command

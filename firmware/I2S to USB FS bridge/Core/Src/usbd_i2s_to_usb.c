@@ -87,9 +87,9 @@
 static uint8_t USBD_I2S_to_USB_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_I2S_to_USB_DeInit(USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req);
-static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev);
+//static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev);
 //static uint8_t USBD_I2S_to_USB_EP0_RxReady(USBD_HandleTypeDef *pdev);
-static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum);
+//static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum);
 //static uint8_t USBD_I2S_to_USB_DataOut(USBD_HandleTypeDef *pdev, uint8_t epnum);
 //static uint8_t USBD_I2S_to_USB_SOF(USBD_HandleTypeDef *pdev);
 static uint8_t *USBD_I2S_to_USB_GetCfgDesc(uint16_t *length);
@@ -101,8 +101,6 @@ static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length);
 /** @defgroup USBD_I2S_to_USB_Private_Variables
   * @{
   */
-
-static uint8_t g_datain_busy = 0;	/* Flag indicating if the IN bulk endpoint is busy (1) or not (0) */
 
 /* Class callbacks */
 USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver =
@@ -116,7 +114,7 @@ USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver =
   NULL,							/* EP0_RxReady (EP0 OUT) */
 
   /* Class-specific endpoints */
-  USBD_I2S_to_USB_DataIn,		/* DataIn */
+  NULL,							/* DataIn */
   NULL,							/* DataOut */
   NULL,							/* SOF */
   NULL,							/* IsoINIncomplete */
@@ -323,25 +321,10 @@ static uint8_t USBD_I2S_to_USB_Setup(USBD_HandleTypeDef *pdev,
   * @param  epnum: endpoint index
   * @retval status
   */
-static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
-{
-	/* If we need to transmit a zero length packet (the last packet was exactly USB_FS_MAX_PACKET_SIZE),
-	 * then queue such a packet. This function will be called again when that packet has been sent,
-	 * at which point the busy flag is cleared. If we do not have to transmit a ZLP, then just clear the
-	 * g_datain_busy flag.
-	 */
-	DEBUG_PRINT("\r\nDatIn");
-	if (pdev->ep_in[epnum].total_length > 0
-			&& (pdev->ep_in[epnum].total_length % USB_FS_MAX_PACKET_SIZE) == 0)
-	{
-		pdev->ep_in[epnum].total_length = 0;
-		USBD_LL_Transmit(pdev, epnum, NULL, 0);
-	}
-	else
-		g_datain_busy = 0;
-
-	return (uint8_t)USBD_OK;
-}
+//static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
+//{
+//	return (uint8_t)USBD_OK;
+//}
 
 /**
   * @brief  USBD_I2S_to_USB_EP0_RxReady
@@ -362,10 +345,11 @@ static uint8_t USBD_I2S_to_USB_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum)
   * @param  pdev: device instance
   * @retval status
   */
-static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev)
-{
-  return (uint8_t)USBD_OK;
-}
+//static uint8_t USBD_I2S_to_USB_EP0_TxReady(USBD_HandleTypeDef *pdev)
+//{
+//	DEBUG_PRINT("\r\nUSBD_I2S_to_USB_EP0_TxReady");
+//  return (uint8_t)USBD_OK;
+//}
 
 /**
   * @brief  USBD_I2S_to_USB_DataOut
@@ -415,13 +399,23 @@ static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length)
 */
 USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length)
 {
+//	DEBUG_PRINT("\r\nUSBD_I2S_to_USB_Transmit(%d)", length);
 	extern USBD_HandleTypeDef hUsbDeviceFS;
-  if (g_datain_busy)
-    return USBD_BUSY;
 
-  g_datain_busy = 1;
-  hUsbDeviceFS.ep_in[I2S_TO_USB_EPIN_ADDR & 0x7F].total_length = length;
-  return USBD_LL_Transmit(&hUsbDeviceFS, I2S_TO_USB_EPIN_ADDR, buf, length);
+	hUsbDeviceFS.ep_in[I2S_TO_USB_EPIN_ADDR & 0x7F].total_length = length;
+	return USBD_LL_Transmit(&hUsbDeviceFS, I2S_TO_USB_EPIN_ADDR, buf, length);
+}
+
+/**
+* @brief  USBD_I2S_to_USB_ClearINStall
+*         Convenience function to clear a stall on the IN endpoint.
+* @retval pointer to descriptor buffer
+*/
+USBD_StatusTypeDef USBD_I2S_to_USB_ClearINStall()
+{
+	DEBUG_PRINT("\r\nUSBD_I2S_to_USB_ClearINStall");
+	extern USBD_HandleTypeDef hUsbDeviceFS;
+	return USBD_LL_ClearStallEP(&hUsbDeviceFS, I2S_TO_USB_EPIN_ADDR);
 }
 
 /**
