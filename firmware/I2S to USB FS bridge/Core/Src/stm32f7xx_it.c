@@ -219,7 +219,7 @@ void DMA1_Stream3_IRQHandler(void)
 void SPI2_IRQHandler(void)
 {
   /* USER CODE BEGIN SPI2_IRQn 0 */
-
+	// TODO: Handle I2S errors.
   /* USER CODE END SPI2_IRQn 0 */
   HAL_I2S_IRQHandler(&hi2s2);
   /* USER CODE BEGIN SPI2_IRQn 1 */

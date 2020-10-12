@@ -61,7 +61,7 @@ Controller_StatusTypeDef controller_attempt_upload()
 	uint8_t last_xfer = 0;
 
 
-	if (	(last_state != g_state) && (
+	if (	(last_state != g_state) && g_state != STATE_IDLE && (
 			(last_state == STATE_ACQ10 && g_state != STATE_ACQ21) ||
 			(last_state == STATE_ACQ21 && g_state != STATE_ACQ31) ||
 			(last_state == STATE_ACQ31 && g_state != STATE_ACQ12) ||
@@ -288,9 +288,10 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 			return CONTROLLER_COMMAND_INVALID;
 
 		/* Steps:
-		 * 1. Stop DMA.
+		 * 1. Reset.
 		 * 2. Send ZLP.
-		 * 3. Reset.
+		 * 3. Stop DMA.
+		 * 4. Flush I2S buffer.
 		 */
 		controller_reset();
 		USBD_I2S_to_USB_Transmit(NULL, 0);
@@ -300,7 +301,23 @@ Controller_StatusTypeDef controller_handle_usb_command(uint8_t bRequest,
 			DEBUG_PRINT("\r\nDMA ERROR");
 			return CONTROLLER_I2S_DMA_ERROR;
 		}
-		/* TODO: Currently does NOT reset properly and subsequent acqs fail */
+		/* Empty the I2S input buffer.
+		 * See also https://embeddedgurus.com/stack-overflow/2010/03/reading-a-register-for-its-side-effects-in-c-and-c/
+		 */
+		DEBUG_PRINT("\r\nEmptying out buffer");
+		HAL_Delay(1);
+		volatile uint16_t sink;
+		while (__HAL_I2S_GET_FLAG(&hi2s2, I2S_FLAG_RXNE))
+		{
+			sink = hi2s2.Instance->DR;
+			DEBUG_PRINT("\r\n%x", sink);
+			HAL_Delay(1);
+		}
+
+		/* TODO: Currently does NOT reset properly and subsequent acqs fail
+		 * https://community.st.com/s/question/0D50X00009XkeU5SAJ/stm32f7-i2s-dma-data-shift-flushing-issue
+		 * https://hackaday.io/project/28496-the-ultimate-vlogging-mic/log/71606-i2s-framing-errors-on-the-stm32
+		 * */
 
 		break;
 

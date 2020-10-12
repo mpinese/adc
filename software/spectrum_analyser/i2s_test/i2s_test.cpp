@@ -103,28 +103,34 @@ int main()
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0xC0, 0, 0, NULL, 0, 1000);
 
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
-
-	unsigned char buf[3*2000];
+	unsigned char buf[3*10];
 	int n_bytes_received, n_bytes_written;
 
-	n_bytes_written = 0;
-	while (n_bytes_written < sizeof(buf))
+	for (int i = 0; i < 5; i++)
 	{
-		libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[n_bytes_written], sizeof(buf) - n_bytes_written, &n_bytes_received, 1000);
-		if (libusb_status < 0)
-			break;
-		n_bytes_written += n_bytes_received;
-	}
-	printf("\n%d %d ", libusb_status, n_bytes_written);
+		printf("\n\nACQ %d\n", i+1);
 
-	for (int j = 0; j < sizeof(buf) / 3; j++)
-	{
-		printf("\n");
-		for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++]));
-	}
+		libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
 
-	libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
+		n_bytes_written = 0;
+		while (n_bytes_written < sizeof(buf))
+		{
+			libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[n_bytes_written], sizeof(buf) - n_bytes_written, &n_bytes_received, 1000);
+			if (libusb_status < 0)
+				break;
+			n_bytes_written += n_bytes_received;
+		}
+		printf("\n%d %d ", libusb_status, n_bytes_written);
+
+		for (int j = 0; j < sizeof(buf) / 3; j++)
+		{
+			printf("\n");
+			for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++]));
+		}
+
+		libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
+		printf("\n%d", libusb_status);
+	}
 
 	libusb_status = libusb_release_interface(bridge_handle, 0);
 	printf("\n%d %s %s", libusb_status, libusb_error_name(libusb_status), libusb_strerror(libusb_error(libusb_status)));
