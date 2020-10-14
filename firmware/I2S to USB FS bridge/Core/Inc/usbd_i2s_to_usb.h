@@ -83,6 +83,7 @@ extern USBD_ClassTypeDef USBD_I2S_to_USB_ClassDriver;
   */
 USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length);
 USBD_StatusTypeDef USBD_I2S_to_USB_ClearINStall();
+USBD_StatusTypeDef USBD_I2S_to_USB_FlushIN();
 
 /**
   * @}

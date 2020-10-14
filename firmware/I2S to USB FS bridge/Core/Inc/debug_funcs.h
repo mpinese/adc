@@ -20,5 +20,4 @@ extern UART_HandleTypeDef huart2;
 #define DEBUG_PRINT(...)
 #endif
 
-
 #endif /* INC_DEBUG_FUNCS_H_ */

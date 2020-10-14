@@ -10,7 +10,8 @@
 
 #include "stm32f7xx_hal.h"
 
-#define I2S_BUFFER_WORDS		10000U	/* Maximum allowable value is 65535 (a HAL limitation; must fit within uint16_t */
+#define I2S_BUFFER_WORDS		30000U	/* Maximum allowable value is 65535 (a HAL limitation; must fit within uint16_t).
+ 	 	 	 	 	 	 	 	 	 	   Large values lead to corruption, for unknown reasons. */
 #define MAX_USB_XFERSIZE		1024	/* In bytes. The IN endpoint FIFO is currently set to 264 words. */
 
 typedef enum
@@ -67,7 +68,7 @@ typedef enum
 	STATE_ACQ21 	= 0x02U,
 	STATE_ACQ31 	= 0x03U,
 	STATE_ACQ12 	= 0x04U,
-	STATE_OVERRUN 	= 0x05U
+	STATE_ERROR 	= 0x05U
 } Controller_State;
 
 Controller_StatusTypeDef controller_reset();

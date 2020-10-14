@@ -199,6 +199,11 @@ static void MX_I2S2_Init(void)
   /* USER CODE END I2S2_Init 0 */
 
   /* USER CODE BEGIN I2S2_Init 1 */
+	// Ensure that ASTRTEN = 0, so that data will be synced to the WS frame.
+	CLEAR_BIT(hi2s2.Instance->I2SCFGR, SPI_I2SCFGR_ASTRTEN);
+
+	// Enable error interrupts
+	__HAL_I2S_ENABLE_IT(&hi2s2, I2S_IT_ERR);
 
   /* USER CODE END I2S2_Init 1 */
   hi2s2.Instance = SPI2;

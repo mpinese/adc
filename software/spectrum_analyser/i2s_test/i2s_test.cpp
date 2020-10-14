@@ -103,33 +103,48 @@ int main()
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0xC0, 0, 0, NULL, 0, 1000);
 
-	unsigned char buf[3*10];
-	int n_bytes_received, n_bytes_written;
+	const uint16_t n_samples = 100;
+	unsigned char buf[1024];
+	int n_bytes_received, samples_captured;
+	uint8_t bridge_state;
+	uint16_t n_samples_in_buf;
+	uint32_t sample_idx;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 2; i++)
 	{
 		printf("\n\nACQ %d\n", i+1);
 
 		libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x40, 0, 0, NULL, 0, 1000);
 
-		n_bytes_written = 0;
-		while (n_bytes_written < sizeof(buf))
+		samples_captured = 0;
+		while (samples_captured < n_samples)
 		{
-			libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[n_bytes_written], sizeof(buf) - n_bytes_written, &n_bytes_received, 1000);
+			libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[0], sizeof(buf), &n_bytes_received, 1000);
 			if (libusb_status < 0)
 				break;
-			n_bytes_written += n_bytes_received;
-		}
-		printf("\n%d %d ", libusb_status, n_bytes_written);
-
-		for (int j = 0; j < sizeof(buf) / 3; j++)
-		{
-			printf("\n");
-			for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++]));
+			bridge_state = buf[0];
+			n_samples_in_buf = (((uint16_t)buf[1]) << 8) + buf[2];
+			samples_captured += n_samples_in_buf;
+			sample_idx = (((uint32_t)buf[3]) << 24) + (((uint32_t)buf[4]) << 16) + (((uint32_t)buf[5]) << 8) + ((uint32_t)buf[6]);
+			printf("\n% 4d %d %03d %06d ", n_bytes_received, bridge_state, n_samples_in_buf, sample_idx);
+			
+			for (int j = 0; j < n_samples_in_buf; j++)
+			{
+				printf("\n");
+				for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++ + 7]));
+			}
 		}
 
 		libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
 		printf("\n%d", libusb_status);
+
+		// Run out the buffer
+		while (true)
+		{
+			libusb_bulk_transfer(bridge_handle, 0x81, &buf[0], sizeof(buf), &n_bytes_received, 1000);
+			if (n_bytes_received == 0)
+				break;
+		}
 	}
 
 	libusb_status = libusb_release_interface(bridge_handle, 0);

@@ -33,7 +33,7 @@ void HAL_PCD_DataInStageCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)
   */
 void HAL_PCD_SetupStageCallback(PCD_HandleTypeDef *hpcd)
 {
-  USBD_LL_SetupStage(hpcd->pData, hpcd->Setup);
+  USBD_LL_SetupStage(hpcd->pData, (uint8_t*) hpcd->Setup);
 }
 
 /**

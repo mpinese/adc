@@ -391,15 +391,13 @@ static uint8_t *USBD_I2S_to_USB_GetDeviceQualifierDesc(uint16_t *length)
 
 /**
 * @brief  USBD_I2S_to_USB_Transmit
-*         Convenience function to bulk transmit data back to the host,
-*         handling ZLP bookkeeping.
+*         Convenience function to bulk transmit data back to the host.
 * @param  buf: data buffer
 * @param  length: data buffer size in bytes
 * @retval pointer to descriptor buffer
 */
 USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length)
 {
-//	DEBUG_PRINT("\r\nUSBD_I2S_to_USB_Transmit(%d)", length);
 	extern USBD_HandleTypeDef hUsbDeviceFS;
 
 	hUsbDeviceFS.ep_in[I2S_TO_USB_EPIN_ADDR & 0x7F].total_length = length;
@@ -413,9 +411,15 @@ USBD_StatusTypeDef USBD_I2S_to_USB_Transmit(uint8_t* buf, uint16_t length)
 */
 USBD_StatusTypeDef USBD_I2S_to_USB_ClearINStall()
 {
-	DEBUG_PRINT("\r\nUSBD_I2S_to_USB_ClearINStall");
+	//DEBUG_PRINT("\r\nUSBD_I2S_to_USB_ClearINStall");
 	extern USBD_HandleTypeDef hUsbDeviceFS;
 	return USBD_LL_ClearStallEP(&hUsbDeviceFS, I2S_TO_USB_EPIN_ADDR);
+}
+
+USBD_StatusTypeDef USBD_I2S_to_USB_FlushIN()
+{
+	extern USBD_HandleTypeDef hUsbDeviceFS;
+	return USBD_LL_FlushEP(&hUsbDeviceFS, I2S_TO_USB_EPIN_ADDR);
 }
 
 /**
