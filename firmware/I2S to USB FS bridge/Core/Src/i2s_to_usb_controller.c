@@ -10,7 +10,6 @@
 
 #include "debug_funcs.h"
 
-#define DEBUG_COUNTER
 
 /* GLOBALS */
 /***********/
@@ -35,11 +34,6 @@ static uint16_t g_i2s_buffer_pos;
 /* Sample counter. Stores the 0-based index of the sample that is at g_i2s_buffer_pos */
 static uint32_t g_sample_counter;
 
-/* Debug assertion variables, for use with I2S counter generator */
-#ifdef DEBUG_COUNTER
-uint8_t g_last_value_set;			/* Has the last value been set? */
-uint8_t g_last_packed_value[3];		/* Last read padded value */
-#endif
 
 
 /* EXTERNAL IMPORTS */
@@ -82,10 +76,6 @@ Controller_StatusTypeDef i2s_read_start()
 		DEBUG_PRINT("\r\nDMA error");
 		return CONTROLLER_I2S_DMA_ERROR;
 	}
-
-#ifdef DEBUG_COUNTER
-	g_last_value_set = 0;
-#endif
 
 	return CONTROLLER_OK;
 }
@@ -173,9 +163,13 @@ Controller_StatusTypeDef controller_reset()
 Controller_StatusTypeDef controller_attempt_upload()
 {
 	USBD_StatusTypeDef usb_status;
-	uint16_t samples_available_to_xfer;
-	uint16_t samples_to_xfer;
-	const uint16_t max_samples_in_xfer = (MAX_USB_XFERSIZE-7)/3;
+	volatile uint32_t* buffer_word_read_ptr;
+	uint8_t* buffer_byte_start_ptr;
+	uint8_t* buffer_byte_write_ptr;
+	uint16_t sample_i;
+	uint32_t buffer_word;
+	uint32_t upload_size;
+	const uint16_t samples_to_xfer = I2S_BUFFER_WORDS/4;
 
 	// Check I2S state
 	if (__HAL_I2S_GET_FLAG(&hi2s2, I2S_FLAG_FRE) == SET)
@@ -202,7 +196,8 @@ Controller_StatusTypeDef controller_attempt_upload()
 		 * sample is two 32-bit words; we only send one of the two
 		 * depending on the active channel.
 		 */
-		samples_available_to_xfer = (I2S_BUFFER_WORDS/2 - g_i2s_buffer_pos)/2;
+		buffer_word_read_ptr = &g_i2s_buffer[g_channel];
+		buffer_byte_start_ptr = (uint8_t*) &g_i2s_buffer[0];
 	}
 	else if (g_state == STATE_ACQ12)
 	{
@@ -211,7 +206,8 @@ Controller_StatusTypeDef controller_attempt_upload()
 		 * sample is two 32-bit words; we only send one of the two
 		 * depending on the active channel.
 		 */
-		samples_available_to_xfer = (I2S_BUFFER_WORDS - g_i2s_buffer_pos)/2;
+		buffer_word_read_ptr = &g_i2s_buffer[I2S_BUFFER_WORDS/2 + g_channel];
+		buffer_byte_start_ptr = (uint8_t*) &g_i2s_buffer[I2S_BUFFER_WORDS/2];
 	}
 	else
 	{
@@ -221,74 +217,47 @@ Controller_StatusTypeDef controller_attempt_upload()
 
 	DEBUG_PRINT("%d", g_state);
 
-	/* Truncate the number of samples to transfer, if it exceeds the max transfer size
-	 * of 19 samples */
-	if (samples_available_to_xfer > max_samples_in_xfer)
-		samples_to_xfer = max_samples_in_xfer;
-	else
-		samples_to_xfer = samples_available_to_xfer;
-
-	/* Fill the transmission buffer */
-	uint8_t transmission_buffer[MAX_USB_XFERSIZE];
-	transmission_buffer[0] = g_state;
-	transmission_buffer[1] = samples_to_xfer >> 8;
-	transmission_buffer[2] = samples_to_xfer & 0xFF;
-	transmission_buffer[3] = g_sample_counter >> 24;
-	transmission_buffer[4] = (g_sample_counter >> 16) & 0xFF;
-	transmission_buffer[5] = (g_sample_counter >> 8) & 0xFF;
-	transmission_buffer[6] = g_sample_counter & 0xFF;
-
-	/* Bit pack the 32 bit data in g_i2s_buffer into 24 bits for USB upload.
+	/* Pack the dwords between buffer_start_idx and buffer_end_idx into 3-byte
+	 * samples, using and overwriting the same RAM.
+	 *
+	 * More details on the packing:
+	 * Bit pack the 32 bit data in g_i2s_buffer into 24 bits for USB upload.
 	 * The g_i2s_buffer data are organised as follows:
 	 *   L2 00 L0 L1 R2 00 R0 R1
 	 * Where L2 is the left channel MSB, L0 is the left channel LSB, and
 	 * equivalently for the right channel. 00 are always zero and can be
-	 * discarded -- in fact this is required to achieve sufficient throughput --
-	 * therefore the bit packing.
+	 * discarded, therefore the bit packing.
 	 *
 	 * Bit pack to the following format:
 	 *   C2 C1 C0
 	 *
 	 * Where C is either L or R, depending on which channel is being sampled.
 	 */
-	uint16_t pack_sample_i;
-	uint32_t unpacked_word;
-	for (pack_sample_i = 0; pack_sample_i < samples_to_xfer; pack_sample_i++)
+	buffer_byte_write_ptr = buffer_byte_start_ptr;
+	for (sample_i = 0; sample_i < samples_to_xfer; sample_i++)
 	{
-		unpacked_word = g_i2s_buffer[g_i2s_buffer_pos + pack_sample_i*2 + g_channel];
-		transmission_buffer[pack_sample_i*3+7] = (uint8_t) ((unpacked_word >> 0) & 0xFF);
-		transmission_buffer[pack_sample_i*3+8] = (uint8_t) ((unpacked_word >> 24) & 0xFF);
-		transmission_buffer[pack_sample_i*3+9] = (uint8_t) ((unpacked_word >> 16) & 0xFF);
-#ifdef DEBUG_COUNTER
-		if (g_last_value_set == 1 && packed_value_inconsistent(&transmission_buffer[pack_sample_i*3+7], &g_last_packed_value[0]))
-		{
-			// Delta assertion failure.
-			DEBUG_PRINT("\r\nDELTA FAIL");
-			DEBUG_PRINT("\r\n  State: %d", g_state);
-			DEBUG_PRINT("\r\n  samples_to_xfer: %d", samples_to_xfer);
-			DEBUG_PRINT("\r\n  g_i2s_buffer_pos: %d", g_i2s_buffer_pos);
-			DEBUG_PRINT("\r\n  pack_sample_i: %d", pack_sample_i);
-			DEBUG_PRINT("\r\n  Packed values: %02x%02x%02x -> %02x%02x%02x",
-					g_last_packed_value[0], g_last_packed_value[1], g_last_packed_value[2],
-					transmission_buffer[pack_sample_i*3+7], transmission_buffer[pack_sample_i*3+8], transmission_buffer[pack_sample_i*3+9]);
-			DEBUG_PRINT("\r\n  g_i2s_buffer[%d..%d]: %08lx %08lx %08lx", g_i2s_buffer_pos-1, g_i2s_buffer_pos+1,
-					g_i2s_buffer[g_i2s_buffer_pos-1+pack_sample_i*2 + g_channel],
-					g_i2s_buffer[g_i2s_buffer_pos+pack_sample_i*2 + g_channel],
-					g_i2s_buffer[g_i2s_buffer_pos+1+pack_sample_i*2 + g_channel]);
-			DEBUG_PRINT("\r\n  packed_buffer[%d..%d]: %02x%02x%02x %02x%02x%02x", pack_sample_i*3-3, pack_sample_i*3+2,
-					transmission_buffer[pack_sample_i*3+7-3], transmission_buffer[pack_sample_i*3+8-3], transmission_buffer[pack_sample_i*3+9-3],
-					transmission_buffer[pack_sample_i*3+7], transmission_buffer[pack_sample_i*3+8], transmission_buffer[pack_sample_i*3+9]);
-			DEBUG_PRINT("\r\n");
-		}
-		g_last_value_set = 1;
-		g_last_packed_value[0] = transmission_buffer[pack_sample_i*3+7];
-		g_last_packed_value[1] = transmission_buffer[pack_sample_i*3+8];
-		g_last_packed_value[2] = transmission_buffer[pack_sample_i*3+9];
-#endif
+		buffer_word = *buffer_word_read_ptr;
+
+		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 0) & 0xFF);
+		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 24) & 0xFF);
+		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 16) & 0xFF);
+
+		buffer_word_read_ptr += 2;
 	}
 
-	usb_status = USBD_I2S_to_USB_Transmit(&transmission_buffer[0], samples_to_xfer*3+7);
-	//USBD_I2S_to_USB_Transmit(NULL, 0);
+	/* Add some status information to the end of the buffer */
+	*(buffer_byte_write_ptr++) = g_state;
+	*(buffer_byte_write_ptr++) = samples_to_xfer >> 8;
+	*(buffer_byte_write_ptr++) = samples_to_xfer & 0xFF;
+	*(buffer_byte_write_ptr++) = g_sample_counter >> 24;
+	*(buffer_byte_write_ptr++) = (g_sample_counter >> 16) & 0xFF;
+	*(buffer_byte_write_ptr++) = (g_sample_counter >> 8) & 0xFF;
+	*(buffer_byte_write_ptr++) = g_sample_counter & 0xFF;
+
+	/* Upload via USB */
+	upload_size = buffer_byte_write_ptr - buffer_byte_start_ptr;
+	usb_status = USBD_I2S_to_USB_Transmit(buffer_byte_start_ptr, upload_size);
+
 	if (usb_status == USBD_BUSY)
 	{
 		DEBUG_PRINT("\r\nUR2");
@@ -304,20 +273,35 @@ Controller_StatusTypeDef controller_attempt_upload()
 		return CONTROLLER_USB_ERROR;
 	}
 
-	/* Update the buffer position */
-	g_i2s_buffer_pos += samples_to_xfer*2;
+	/* Add a ZLP if needed */
+	if (upload_size > 0 && (upload_size % USB_MAX_EP0_SIZE) == 0)
+	{
+		usb_status = USBD_I2S_to_USB_Transmit(NULL, 0);
+
+		if (usb_status == USBD_BUSY)
+		{
+			DEBUG_PRINT("\r\nUR4");
+			return CONTROLLER_USB_BUSY;
+		}
+		else if (usb_status != USBD_OK)
+		{
+			DEBUG_PRINT("\r\nUR5");
+			i2s_read_stop();
+			usb_flush();
+			g_state = STATE_ERROR;
+			g_error = CONTROLLER_USB_ERROR;
+			return CONTROLLER_USB_ERROR;
+		}
+	}
+
+	/* Update the sample counter */
 	g_sample_counter += samples_to_xfer;
 
-	/* Transition state if we've sent the whole half-buffer */
-	if (g_state == STATE_ACQ21 && g_i2s_buffer_pos == I2S_BUFFER_WORDS/2)
-	{
+	/* Transition state */
+	if (g_state == STATE_ACQ21)
 		g_state = STATE_ACQ31;
-	}
-	else if (g_state == STATE_ACQ12 && g_i2s_buffer_pos == I2S_BUFFER_WORDS)
-	{
+	else if (g_state == STATE_ACQ12)
 		g_state = STATE_ACQ10;
-		g_i2s_buffer_pos = 0;
-	}
 
 	return CONTROLLER_OK;
 }
@@ -491,25 +475,25 @@ void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef *hi2s)
 
 void HAL_I2S_ErrorCallback(I2S_HandleTypeDef *hi2s)
 {
-/*
- *
-Clearing the OVR bit is done by a read operation on the SPIx_DR register followed by a
-read access to the SPIx_SR register.
+	/*
+	 *
+	Clearing the OVR bit is done by a read operation on the SPIx_DR register followed by a
+	read access to the SPIx_SR register.
 
-Frame error flag (FRE)
-This flag can be set by hardware only if the I2S is configured in Slave mode. It is set if the
-external master is changing the WS line while the slave is not expecting this change. If the
-synchronization is lost, the following steps are required to recover from this state and
-resynchronize the external master device with the I2S slave device:
-1. Disable the I2S.
-2. Re-enable the I2S interface again (Keeping ASTRTEN=0).
-Desynchronization between master and slave devices may be due to noisy environment on
-the CK communication clock or on the WS frame synchronization line. An error interrupt can
-be generated if the ERRIE bit is set. The desynchronization flag (FRE) is cleared by
-software when the status register is read.
+	Frame error flag (FRE)
+	This flag can be set by hardware only if the I2S is configured in Slave mode. It is set if the
+	external master is changing the WS line while the slave is not expecting this change. If the
+	synchronization is lost, the following steps are required to recover from this state and
+	resynchronize the external master device with the I2S slave device:
+	1. Disable the I2S.
+	2. Re-enable the I2S interface again (Keeping ASTRTEN=0).
+	Desynchronization between master and slave devices may be due to noisy environment on
+	the CK communication clock or on the WS frame synchronization line. An error interrupt can
+	be generated if the ERRIE bit is set. The desynchronization flag (FRE) is cleared by
+	software when the status register is read.
 
- *
- */
+	 *
+	 */
 	DEBUG_PRINT("\r\nISR: ERROR");
 	if (__HAL_I2S_GET_FLAG(&hi2s2, I2S_FLAG_FRE) == SET)
 	{

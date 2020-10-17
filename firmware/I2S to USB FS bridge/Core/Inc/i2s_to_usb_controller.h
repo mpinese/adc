@@ -11,7 +11,8 @@
 #include "stm32f7xx_hal.h"
 
 #define I2S_BUFFER_WORDS		30000U	/* Maximum allowable value is 65535 (a HAL limitation; must fit within uint16_t).
- 	 	 	 	 	 	 	 	 	 	   Large values lead to corruption, for unknown reasons. */
+ 	 	 	 	 	 	 	 	 	 	   Large values lead to corruption, for unknown reasons.
+ 	 	 	 	 	 	 	 	 	 	   Must be an integer multiple of 4. */
 #define MAX_USB_XFERSIZE		1024	/* In bytes. The IN endpoint FIFO is currently set to 264 words. */
 
 typedef enum

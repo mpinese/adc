@@ -103,12 +103,19 @@ int main()
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0x80, 0, 0, NULL, 0, 1000);
 	//libusb_status = libusb_control_transfer(bridge_handle, 0x40, 0xC0, 0, 0, NULL, 0, 1000);
 
-	const uint16_t n_samples = 100;
-	unsigned char buf[1024];
+	const uint32_t n_samples = 100000;
+	unsigned char *buf;
 	int n_bytes_received, samples_captured;
 	uint8_t bridge_state;
 	uint16_t n_samples_in_buf;
 	uint32_t sample_idx;
+	const size_t buf_size = 49000;
+
+	if ((buf = (unsigned char*) malloc(buf_size)) == NULL)
+	{
+		printf("\nMemory allocation failed.");
+		return -1;
+	}
 
 	for (int i = 0; i < 2; i++)
 	{
@@ -119,19 +126,28 @@ int main()
 		samples_captured = 0;
 		while (samples_captured < n_samples)
 		{
-			libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, &buf[0], sizeof(buf), &n_bytes_received, 1000);
+			libusb_status = libusb_bulk_transfer(bridge_handle, 0x81, buf, buf_size, &n_bytes_received, 1000);
+			if (n_bytes_received == buf_size)
+			{
+				printf("\nBuffer too small.");
+				return -1;
+			}
 			if (libusb_status < 0)
 				break;
-			bridge_state = buf[0];
-			n_samples_in_buf = (((uint16_t)buf[1]) << 8) + buf[2];
+			bridge_state = buf[n_bytes_received-7];
+			n_samples_in_buf = (((uint16_t)buf[n_bytes_received-6]) << 8) + buf[n_bytes_received-5];
 			samples_captured += n_samples_in_buf;
-			sample_idx = (((uint32_t)buf[3]) << 24) + (((uint32_t)buf[4]) << 16) + (((uint32_t)buf[5]) << 8) + ((uint32_t)buf[6]);
-			printf("\n% 4d %d %03d %06d ", n_bytes_received, bridge_state, n_samples_in_buf, sample_idx);
+			sample_idx = 
+				(((uint32_t)buf[n_bytes_received-4]) << 24) +
+				(((uint32_t)buf[n_bytes_received-3]) << 16) + 
+				(((uint32_t)buf[n_bytes_received-2]) << 8) + 
+				((uint32_t)buf[n_bytes_received-1]);
+			printf("\n% 4d %d %03d %06ul ", n_bytes_received, bridge_state, n_samples_in_buf, sample_idx);
 			
 			for (int j = 0; j < n_samples_in_buf; j++)
 			{
-				printf("\n");
-				for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++ + 7]));
+//				printf("\n");
+//				for (int k = 0; k < 3; printf("%02X", buf[j * 3 + k++]));
 			}
 		}
 
