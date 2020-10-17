@@ -109,7 +109,7 @@ int main()
 	uint8_t bridge_state;
 	uint16_t n_samples_in_buf;
 	uint32_t sample_idx;
-	const size_t buf_size = 49000;
+	const size_t buf_size = 7600;
 
 	if ((buf = (unsigned char*) malloc(buf_size)) == NULL)
 	{
