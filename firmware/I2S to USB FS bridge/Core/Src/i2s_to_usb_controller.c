@@ -238,9 +238,9 @@ Controller_StatusTypeDef controller_attempt_upload()
 	{
 		buffer_word = *buffer_word_read_ptr;
 
-		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 0) & 0xFF);
 		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 24) & 0xFF);
-		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >> 16) & 0xFF);
+		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >>  0) & 0xFF);
+		*(buffer_byte_write_ptr++) = (uint8_t) ((buffer_word >>  8) & 0xFF);
 
 		buffer_word_read_ptr += 2;
 	}
