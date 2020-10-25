@@ -1,0 +1,23 @@
+namespace BridgeMessages;
+
+enum Channel: byte {
+  Left,
+  Right
+}
+
+enum Window: byte {
+  Rectangular,
+  Hann,
+  BlackmanHarris
+}
+
+table CaptureRequest {
+  channel:Channel;
+  n_samples:uint32;
+  window:Window;
+}
+
+table CaptureResponse {
+  samples:[int32];
+  spectrum:[float64];
+}

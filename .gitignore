@@ -24,3 +24,10 @@ firmware/Serial audio test generators/incremental_db/README
 firmware/Serial audio test generators/incremental_db/compiled_partitions/
 firmware/Serial audio test generators/output_files/
 firmware/Serial audio test generators/simulation/
+software/spectrum_analyser/bridge/x64/
+software/spectrum_analyser/cppzmq-4.7.1/
+software/spectrum_analyser/fftw-3.3.5-dll64/
+software/spectrum_analyser/flatbuffers-1.12.0/
+software/spectrum_analyser/libzmq-v141-x64-4_3_2/
+software/spectrum_analyser/measure_thd/x64/
+software/spectrum_analyser/spectrum_analyser/BridgeMessages/__pycache__/
