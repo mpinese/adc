@@ -1,7 +1,6 @@
 #include "ADC.h"
 
 #include <cassert>
-#include <chrono>
 
 
 ADC::ADC()
@@ -107,7 +106,7 @@ void ADC::flush_buffer() const
 	while (true)
 	{
 		int n_bytes_received;
-		libusb_bulk_transfer(this->m_bridge_handle, 0x81, this->m_usb_buffer.get(), this->c_buf_size, &n_bytes_received, 1000);
+		libusb_bulk_transfer(this->m_bridge_handle, 0x81, this->m_usb_buffer.get(), this->c_buf_size, &n_bytes_received, 10);
 		if (n_bytes_received == 0)
 			break;
 	}
