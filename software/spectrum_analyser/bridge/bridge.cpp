@@ -91,7 +91,7 @@ vector<double> calc_spectrum(const vector<double> windowed_samples)
 	vector<double> output;
 	output.resize(dft_size);
 	for (size_t i = 0; i < dft_size; i++)
-		output[i] = hypot(fft_out[i][0], fft_out[i][1]);
+		output[i] = hypot(fft_out[i][0], fft_out[i][1]) / double(N);
 
 	fftw_destroy_plan(fft_plan);
 	fftw_free(fft_out);
@@ -103,66 +103,78 @@ vector<double> calc_spectrum(const vector<double> windowed_samples)
 
 int main()
 {
-	ADC adc;
-	adc.connect();
+	try {
+		ADC adc;
+		adc.connect();
 
-	zmq::context_t zmq_context(1);
-	zmq::socket_t zmq_socket(zmq_context, zmq::socket_type::rep);
-	zmq_socket.bind("tcp://127.0.0.1:5555");
+		zmq::context_t zmq_context(1);
+		zmq::socket_t zmq_socket(zmq_context, zmq::socket_type::rep);
+		zmq_socket.bind("tcp://127.0.0.1:5555");
 
-	cout << "Bound to tcp://127.0.0.1:5555" << endl;
-	while (true)
+		cout << "Bound to tcp://127.0.0.1:5555" << endl;
+		while (true)
+		{
+			zmq::message_t zmq_request;
+
+			// A. Wait for a work request from the client
+			zmq_socket.recv(zmq_request);
+			cout << "Received request" << endl;
+
+			// B1. Parse the request
+			auto t1 = std::chrono::high_resolution_clock::now();
+			auto fb_req = flatbuffers::GetRoot<BridgeMessages::CaptureRequest>(zmq_request.data());
+			auto t2 = std::chrono::high_resolution_clock::now();
+
+			// B2. Get the sample
+			const auto samples = adc.get_samples(fb_req->n_samples(), fb_req->channel() == BridgeMessages::Channel_Left ? ADC::Channel::Left : ADC::Channel::Right);
+			auto t3 = std::chrono::high_resolution_clock::now();
+
+			// B3. Window the sample for fft.
+			const auto windowed_samples = window_samples(samples, fb_req->window());
+			auto t4 = std::chrono::high_resolution_clock::now();
+
+			// B4. Perform the FFT
+			const auto spectrum = calc_spectrum(windowed_samples);
+			auto t5 = std::chrono::high_resolution_clock::now();
+
+			// B5. Serialise the results
+			// Preallocate n_samples*4 for the int32_t array of samples,
+			// (n_samples+1)/2*8 for the double array of spectral values,
+			// plus 1 kb slack.
+			flatbuffers::FlatBufferBuilder builder(fb_req->n_samples() * 8 + 1000);
+			auto samples_offset = builder.CreateVector(samples);
+			auto spectrum_offset = builder.CreateVector(spectrum);
+			BridgeMessages::CaptureResponseBuilder response_builder(builder);
+			response_builder.add_samples(samples_offset);
+			response_builder.add_spectrum(spectrum_offset);
+			auto fb_response = response_builder.Finish();
+			builder.Finish(fb_response);
+			auto t6 = std::chrono::high_resolution_clock::now();
+
+			// C. Return the result
+			zmq::message_t zmq_reply(builder.GetBufferPointer(), builder.GetSize());
+			zmq_socket.send(zmq_reply, zmq::send_flags::none);
+			auto t7 = std::chrono::high_resolution_clock::now();
+			cout << "Sent response" << endl;
+			cout << "Times:" << endl;
+			cout << "  Parse request:    " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << endl;
+			cout << "  Get sample:       " << std::chrono::duration_cast<std::chrono::milliseconds>(t3 - t2).count() << endl;
+			cout << "  (Theoretical):    " << fb_req->n_samples() / 88.2 << endl;
+			cout << "  Window sample:    " << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << endl;
+			cout << "  FFT:              " << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << endl;
+			cout << "  Serialise result: " << std::chrono::duration_cast<std::chrono::milliseconds>(t6 - t5).count() << endl;
+			cout << "  Send result:      " << std::chrono::duration_cast<std::chrono::milliseconds>(t7 - t6).count() << endl;
+		}
+	}
+	catch (const ADCException& e)
 	{
-		zmq::message_t zmq_request;
-
-		// A. Wait for a work request from the client
-		zmq_socket.recv(zmq_request);
-		cout << "Received request" << endl;
-
-		// B1. Parse the request
-		auto t1 = std::chrono::high_resolution_clock::now();
-		auto fb_req = flatbuffers::GetRoot<BridgeMessages::CaptureRequest>(zmq_request.data());
-		auto t2 = std::chrono::high_resolution_clock::now();
-
-		// B2. Get the sample
-		const auto samples = adc.get_samples(fb_req->n_samples(), fb_req->channel() == BridgeMessages::Channel_Left ? ADC::Channel::Left : ADC::Channel::Right);
-		auto t3 = std::chrono::high_resolution_clock::now();
-
-		// B3. Window the sample for fft.
-		const auto windowed_samples = window_samples(samples, fb_req->window());
-		auto t4 = std::chrono::high_resolution_clock::now();
-
-		// B4. Perform the FFT
-		const auto spectrum = calc_spectrum(windowed_samples);
-		auto t5 = std::chrono::high_resolution_clock::now();
-
-		// B5. Serialise the results
-		// Preallocate n_samples*4 for the int32_t array of samples,
-		// (n_samples+1)/2*8 for the double array of spectral values,
-		// plus 1 kb slack.
-		flatbuffers::FlatBufferBuilder builder(fb_req->n_samples() * 8 + 1000);
-		auto samples_offset = builder.CreateVector(samples);
-		auto spectrum_offset = builder.CreateVector(spectrum);
-		BridgeMessages::CaptureResponseBuilder response_builder(builder);
-		response_builder.add_samples(samples_offset);
-		response_builder.add_spectrum(spectrum_offset);
-		auto fb_response = response_builder.Finish();
-		builder.Finish(fb_response);
-		auto t6 = std::chrono::high_resolution_clock::now();
-
-		// C. Return the result
-		zmq::message_t zmq_reply(builder.GetBufferPointer(), builder.GetSize());
-		zmq_socket.send(zmq_reply, zmq::send_flags::none);
-		auto t7 = std::chrono::high_resolution_clock::now();
-		cout << "Sent response" << endl;
-		cout << "Times:" << endl;
-		cout << "  Parse request:    " << std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count() << endl;
-		cout << "  Get sample:       " << std::chrono::duration_cast<std::chrono::milliseconds>(t3 - t2).count() << endl;
-		cout << "  (Theoretical):    " << fb_req->n_samples() / 88.2 << endl;
-		cout << "  Window sample:    " << std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count() << endl;
-		cout << "  FFT:              " << std::chrono::duration_cast<std::chrono::milliseconds>(t5 - t4).count() << endl;
-		cout << "  Serialise result: " << std::chrono::duration_cast<std::chrono::milliseconds>(t6 - t5).count() << endl;
-		cout << "  Send result:      " << std::chrono::duration_cast<std::chrono::milliseconds>(t7 - t6).count() << endl;
+		cout << "Error communicating with ADC. Message: " << e.what() << endl;
+	}
+	catch (const zmq::error_t& e)
+	{
+		cout << "Error reported by ZMQ. Code: " << e.num() << ", Message: " << e.what() << endl;
+		if (e.num() == 13)
+			cout << "Hint: VPNs or other infrastructure that block local loopback connections can cause this error." << endl;
 	}
 
 	return 0;
